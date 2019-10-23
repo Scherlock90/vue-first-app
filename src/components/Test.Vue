@@ -52,6 +52,17 @@
                 No, isn't working!
             </p>
         </div>
+        <div>
+            <span v-pre>
+                To decoumantion {{ vPreTest }}
+            </span>
+            <pre>
+                All Data: {{ $data }}
+            </pre>
+            <pre>
+                vPreTest: {{ $data.vPreTest }}
+            </pre>
+        </div>
     </div>
   </div>
 </template>
@@ -72,7 +83,8 @@ export default {
       ],
       showButtonIfIWriteSomething: '',
       toggleText: 'yes',
-      activeClass: 'button-show-if'
+      activeClass: 'button-show-if',
+      vPreTest: 'v-pre test'
     }
   }
 }

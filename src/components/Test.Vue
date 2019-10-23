@@ -74,6 +74,7 @@
                 Counter: {{ counter }}
             </div>
             <div v-html="testHtmlElements"></div>
+            <div v-text="showButtonIfIWriteSomething"></div>
         </div>
     </div>
   </div>

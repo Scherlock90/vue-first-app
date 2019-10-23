@@ -8,6 +8,7 @@
             {{ testArea }}
         </div>
     </div>
+    <!-- test v-model -->
     <div class="container-checked-names padding-container">
         <input type="checkbox" id="sebastian" value="Sebastian" v-model="checkedNames" />
         <label for="sebastian">Sebastian</label>
@@ -19,6 +20,7 @@
             Checked names: {{ checkedNames }}
         </div>
     </div>
+    <!-- test  v-for loops -->
     <div class="container-checked-names padding-container">
         <span v-for="(option, index) in options" v-bind:option="option" :key="index">
         <input type="checkbox" :id="option.value" :value="option.value"  v-model="checkedNamesOtherSolution"/>
@@ -32,18 +34,21 @@
     </div>
     <div class="container-show-button-if padding-container">
         <div class="show-button">Show Button Test !</div>
+        <!-- test v-model -> two way binding -->
         <textarea v-model="showButtonIfIWriteSomething"></textarea>
         <div>
             <button class="button-show-if" type="sumbit" v-if="showButtonIfIWriteSomething">
                 Let You see Me!
             </button>
         </div>
+        <!-- test v-bind or : -->
         <div>
             <input type="radio" id="yes" value="yes" v-model="toggleText"/>
             <label for="no" :class="[toggleText === 'yes' ? activeClass: '']">Yes!</label>
             <input type="radio" id="no" value="no" v-model="toggleText"/>
             <label for="no">No!</label>
         </div>
+        <!-- test v-if v-else -->
         <div v-if="toggleText">
             <p v-if="toggleText === 'yes'">
                 Yeah, great!
@@ -52,6 +57,7 @@
                 No, isn't working!
             </p>
         </div>
+        <!-- test v-pre -->
         <div>
             <span v-pre>
                 To decoumantion {{ vPreTest }}
@@ -73,7 +79,9 @@
             <div>
                 Counter: {{ counter }}
             </div>
+            <!-- test v-html -->
             <div v-html="testHtmlElements"></div>
+            <!-- test v-text -->
             <div v-text="showButtonIfIWriteSomething"></div>
         </div>
     </div>

@@ -19,6 +19,17 @@
             Checked names: {{ checkedNames }}
         </div>
     </div>
+     <div class="container-checked-names padding-container">
+         <span v-for="(option, index) in options" v-bind:option="option" :key="index">
+            <input type="checkbox" :id="option.value" :value="option.value"  v-model="checkedNamesOtherSolution"/>
+            <label for="option.value">
+               {{ index}}. {{ option.value }}
+            </label>
+         </span>
+        <div class="checked-names">
+            Checked names options: {{ checkedNamesOtherSolution }}
+        </div>
+    </div>
   </div>
 </template>
 
@@ -27,9 +38,15 @@ export default {
   name: 'Test',
   data () {
     return {
-      msg: 'Welcome to Test!',
-      testArea: 'testing area v-model',
-      checkedNames: []
+        msg: 'Welcome to Test!',
+        testArea: 'testing',
+        checkedNames: [],
+        checkedNamesOtherSolution: [],
+        options: [
+            {value: 'Sebastian Opt'}, 
+            {value: 'Natalia Opt'}, 
+            {value: 'Kamil Opt'}
+        ]
     }
   }
 }

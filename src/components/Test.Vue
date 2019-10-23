@@ -19,15 +19,24 @@
             Checked names: {{ checkedNames }}
         </div>
     </div>
-     <div class="container-checked-names padding-container">
-         <span v-for="(option, index) in options" v-bind:option="option" :key="index">
-            <input type="checkbox" :id="option.value" :value="option.value"  v-model="checkedNamesOtherSolution"/>
-            <label for="option.value">
-               {{ index}}. {{ option.value }}
-            </label>
-         </span>
+    <div class="container-checked-names padding-container">
+        <span v-for="(option, index) in options" v-bind:option="option" :key="index">
+        <input type="checkbox" :id="option.value" :value="option.value"  v-model="checkedNamesOtherSolution"/>
+        <label for="option.value">
+            {{ index}}. {{ option.value }}
+        </label>
+        </span>
         <div class="checked-names">
             Checked names options: {{ checkedNamesOtherSolution }}
+        </div>
+    </div>
+    <div class="container-show-button-if padding-container">
+        <div class="show-button">Show Button Test !</div>
+        <textarea v-model="showButtonIfIWriteSomething"></textarea>
+        <div>
+            <button class="button-show-if" type="sumbit" v-if="showButtonIfIWriteSomething">
+                Let You see Me!
+            </button>
         </div>
     </div>
   </div>
@@ -46,7 +55,8 @@ export default {
         {value: 'Sebastian Opt'},
         {value: 'Natalia Opt'},
         {value: 'Kamil Opt'}
-      ]
+      ],
+      showButtonIfIWriteSomething: ''
     }
   }
 }
@@ -83,7 +93,18 @@ a {
     border-top: 2px solid rgb(12, 12, 12);
     width: 100%;
 }
+.container-show-button-if{
+    border-top: 2px solid rgb(247, 5, 5);
+    width: 100%;
+}
 .checked-names{
     padding: 1rem;
+}
+.show-button{
+    color: red;
+}
+.button-show-if{
+    background-color: red;
+    color: white;
 }
 </style>

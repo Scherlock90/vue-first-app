@@ -6,6 +6,23 @@ const path = require('path')
 
 module.exports = {
   dev: {
+    module: {
+      loaders: [
+        {
+          test: /\.vue$/,
+          loader: 'vue'
+        },
+        {
+          test: /\.s[a|c]ss$/,
+          loader: 'style!css!scss'
+        }
+      ]
+    },
+    vue: {
+      loaders: {
+        scss: 'style!css!scss'
+      }
+    },
 
     // Paths
     assetsSubDirectory: 'static',

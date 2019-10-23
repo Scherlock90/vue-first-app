@@ -84,6 +84,16 @@
             <!-- test v-text -->
             <div v-text="showButtonIfIWriteSomething"></div>
         </div>
+        <!-- test methods binding -->
+        <div>
+            <div>
+                <button @click="increment">+</button>
+                <button @click="decrement">-</button>
+            </div>
+            <div>
+                Test counter with binding methods: {{ counterMethods }}
+            </div>
+        </div>
     </div>
   </div>
 </template>
@@ -107,7 +117,16 @@ export default {
       activeClass: 'button-show-if',
       vPreTest: 'v-pre test',
       counter: 0,
-      testHtmlElements: 'test <a href="https://vuejs.org/">v-html</a>'
+      testHtmlElements: 'test <a href="https://vuejs.org/">v-html</a>',
+      counterMethods: 0
+    }
+  },
+  methods: {
+    increment () {
+      this.counterMethods++
+    },
+    decrement () {
+      this.counterMethods--
     }
   }
 }

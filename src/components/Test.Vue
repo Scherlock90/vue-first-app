@@ -38,8 +38,14 @@
                 Let You see Me!
             </button>
         </div>
-        <div v-if="showButtonIfIWriteSomething">
-            <p v-if="toggleText === true">
+        <div>
+            <input type="radio" id="yes" value="yes" v-model="toggleText"/>
+            <label for="no">Yes!</label>
+            <input type="radio" id="no" value="no" v-model="toggleText"/>
+            <label for="no">No!</label>
+        </div>
+        <div v-if="toggleText">
+            <p v-if="toggleText === 'yes'">
                 Yeah, great!
             </p>
             <p v-else>
@@ -65,7 +71,7 @@ export default {
         {value: 'Kamil Opt'}
       ],
       showButtonIfIWriteSomething: '',
-      toggleText: 'true'
+      toggleText: 'yes'
     }
   }
 }

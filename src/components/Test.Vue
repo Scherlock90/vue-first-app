@@ -63,6 +63,17 @@
                 vPreTest: {{ $data.vPreTest }}
             </pre>
         </div>
+        <div>
+            <div>
+                <!-- v-on = binding event -->
+                <button v-on:click="counter += 1">+</button>
+                <!-- @ shortcut to v-on: -->
+                <button @click="counter > 0 ? counter -= 1 : 0">-</button>
+            </div>
+            <div>
+                Counter: {{ counter }}
+            </div>
+        </div>
     </div>
   </div>
 </template>
@@ -84,7 +95,8 @@ export default {
       showButtonIfIWriteSomething: '',
       toggleText: 'yes',
       activeClass: 'button-show-if',
-      vPreTest: 'v-pre test'
+      vPreTest: 'v-pre test',
+      counter: 0
     }
   }
 }

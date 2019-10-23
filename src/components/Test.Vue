@@ -94,6 +94,9 @@
                 Test counter with binding methods: {{ counterMethods }}
             </div>
         </div>
+        <div class="container-mousemove-change-background" :style="{ backgroundColor: `hsl(${x}, 80%, 50%` }" @mousemove="xCoordinate">
+            This is the box events mousemove change background!
+        </div>
     </div>
   </div>
 </template>
@@ -118,7 +121,8 @@ export default {
       vPreTest: 'v-pre test',
       counter: 0,
       testHtmlElements: 'test <a href="https://vuejs.org/">v-html</a>',
-      counterMethods: 0
+      counterMethods: 0,
+      x: 0
     }
   },
   methods: {
@@ -127,6 +131,9 @@ export default {
     },
     decrement () {
       this.counterMethods--
+    },
+    xCoordinate (e) {
+      this.x = e.clientX
     }
   }
 }
@@ -134,6 +141,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+//variable
+$color-white: #ffffff;
+$color-red: rgb(247, 5, 5);
+$color-dark: rgb(12, 12, 12);
+$color-href: #42b983;
+//main code
 h1, h2 {
   font-weight: normal;
 }
@@ -146,7 +159,7 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: $color-href;
 }
 .test{
     display: grid;
@@ -157,24 +170,32 @@ a {
     padding: 1rem;
 }
 .v-model-textarea{
-    border-top:  2px  solid rgb(248, 4, 4);
+    border-top:  2px  solid $color-red;
 }
 .container-checked-names{
-    border-top: 2px solid rgb(12, 12, 12);
+    border-top: 2px solid $color-dark;
     width: 100%;
     .checked-names{
         padding: 1rem;
     }
 }
 .container-show-button-if{
-    border-top: 2px solid rgb(247, 5, 5);
+    border-top: 2px solid $color-red;
     width: 100%;
     .show-button{
-        color: red;
+        color: $color-red;
     }
     .button-show-if{
-        background-color: red;
-        color: white;
+        background-color: $color-red;
+        color: $color-white;
     }
+}
+.container-mousemove-change-background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-white;
+    height: 200px;
+    width: 100%
 }
 </style>

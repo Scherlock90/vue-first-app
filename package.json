@@ -11,7 +11,7 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js",
-    "predeploy": "git add dist && git commit -m 'Initial dist subtree commit'",
+    "predeploy": "git add dist && git commit -m 'Initial dist subtree commits'",
     "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {

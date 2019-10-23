@@ -40,7 +40,7 @@
         </div>
         <div>
             <input type="radio" id="yes" value="yes" v-model="toggleText"/>
-            <label for="no">Yes!</label>
+            <label for="no" :class="[toggleText === 'yes' ? activeClass: '']">Yes!</label>
             <input type="radio" id="no" value="no" v-model="toggleText"/>
             <label for="no">No!</label>
         </div>
@@ -71,7 +71,8 @@ export default {
         {value: 'Kamil Opt'}
       ],
       showButtonIfIWriteSomething: '',
-      toggleText: 'yes'
+      toggleText: 'yes',
+      activeClass: 'button-show-if'
     }
   }
 }

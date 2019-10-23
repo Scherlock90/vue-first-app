@@ -1,11 +1,22 @@
 <template>
-  <div class="hello">
+  <div class="test">
     <h1>{{ msg }}</h1>
     <router-link to="/">Go to Home</router-link>
-    <div class="v-model-textarea">
+    <div class="v-model-textarea padding-container">
         <textarea v-model="testArea" rows="6" maxlength="72" />
         <div>
             {{ testArea }}
+        </div>
+    </div>
+    <div class="container-checked-names padding-container">
+        <input type="checkbox" id="sebastian" value="Sebastian" v-model="checkedNames" />
+        <label for="sebastian">Sebastian</label>
+        <input type="checkbox" id="natalia" value="Natalia" v-model="checkedNames" />
+        <label for="natalia">Natalia</label>
+        <input type="checkbox" id="kamil" value="Kamil" v-model="checkedNames" />
+        <label for="kamil">Kamil</label>
+        <div class="checked-names">
+            Checked names: {{ checkedNames }}
         </div>
     </div>
   </div>
@@ -17,7 +28,8 @@ export default {
   data () {
     return {
       msg: 'Welcome to Test!',
-      testArea: 'testing area v-model'
+      testArea: 'testing area v-model',
+      checkedNames: []
     }
   }
 }
@@ -39,7 +51,22 @@ li {
 a {
   color: #42b983;
 }
+.test{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.padding-container{
+    padding: 1rem;
+}
 .v-model-textarea{
+    border-top:  2px  solid rgb(248, 4, 4);
+}
+.container-checked-names{
+    border-top: 2px solid rgb(12, 12, 12);
+    width: 100%;
+}
+.checked-names{
     padding: 1rem;
 }
 </style>

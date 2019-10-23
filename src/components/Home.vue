@@ -83,7 +83,12 @@
     <div>
       {{ newWord }}
     </div>
-    <router-link to="/Contact">Go to Contact</router-link>
+    <div>
+      <router-link to="/Contact">Go to Contact</router-link>
+    </div>
+    <div>
+      <router-link to="/Test">Go to Test</router-link>
+    </div>
   </div>
 </template>
 

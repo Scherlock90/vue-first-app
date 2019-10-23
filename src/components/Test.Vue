@@ -1,20 +1,23 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <div>
-      {{ newWord }}
-    </div>
     <router-link to="/">Go to Home</router-link>
+    <div class="v-model-textarea">
+        <textarea v-model="testArea" rows="6" maxlength="72" />
+        <div>
+            {{ testArea }}
+        </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Contact',
+  name: 'Test',
   data () {
     return {
-      msg: 'Welcome to Contact!',
-      newWord: 'Something'
+      msg: 'Welcome to Test!',
+      testArea: 'testing area v-model'
     }
   }
 }
@@ -35,5 +38,8 @@ li {
 }
 a {
   color: #42b983;
+}
+.v-model-textarea{
+    padding: 1rem;
 }
 </style>

@@ -38,15 +38,15 @@ export default {
   name: 'Test',
   data () {
     return {
-        msg: 'Welcome to Test!',
-        testArea: 'testing',
-        checkedNames: [],
-        checkedNamesOtherSolution: [],
-        options: [
-            {value: 'Sebastian Opt'}, 
-            {value: 'Natalia Opt'}, 
-            {value: 'Kamil Opt'}
-        ]
+      msg: 'Welcome to Test!',
+      testArea: 'testing',
+      checkedNames: [],
+      checkedNamesOtherSolution: [],
+      options: [
+        {value: 'Sebastian Opt'},
+        {value: 'Natalia Opt'},
+        {value: 'Kamil Opt'}
+      ]
     }
   }
 }

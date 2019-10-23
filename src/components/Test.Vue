@@ -73,6 +73,7 @@
             <div>
                 Counter: {{ counter }}
             </div>
+            <div v-html="testHtmlElements"></div>
         </div>
     </div>
   </div>
@@ -96,7 +97,8 @@ export default {
       toggleText: 'yes',
       activeClass: 'button-show-if',
       vPreTest: 'v-pre test',
-      counter: 0
+      counter: 0,
+      testHtmlElements: 'test <a href="https://vuejs.org/">v-html</a>'
     }
   }
 }

@@ -4,6 +4,8 @@
   "description": "A Vue.js project",
   "author": "Sebastian Napora <sebastian.napora@intive.com>",
   "private": true,
+  "homepage": "https://github.com/Scherlock90/vue-first-app",
+  "wst": "/dist/",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "yarn run dev",
@@ -11,10 +13,11 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "deploy": "node ./node_modules/vue-gh-pages/index.js"
   },
   "dependencies": {
     "vue": "^2.5.2",
+    "vue-gh-pages": "^1.19.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

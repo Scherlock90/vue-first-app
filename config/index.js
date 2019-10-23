@@ -6,23 +6,6 @@ const path = require('path')
 
 module.exports = {
   dev: {
-    module: {
-      loaders: [
-        {
-          test: /\.vue$/,
-          loader: 'vue'
-        },
-        {
-          test: /\.s[a|c]ss$/,
-          loader: 'style!css!scss'
-        }
-      ]
-    },
-    vue: {
-      loaders: {
-        scss: 'style!css!scss'
-      }
-    },
 
     // Paths
     assetsSubDirectory: 'static',
@@ -82,7 +65,7 @@ module.exports = {
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
     productionGzip: false,
-    productionGzipExtensions: ['js', 'css'],
+    productionGzipExtensions: ['js', 'css', 'scss'],
 
     // Run the build command with an extra argument to
     // View the bundle analyzer report after build finishes:

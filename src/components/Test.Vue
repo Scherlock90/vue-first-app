@@ -114,7 +114,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 h1, h2 {
   font-weight: normal;
 }
@@ -143,19 +143,19 @@ a {
 .container-checked-names{
     border-top: 2px solid rgb(12, 12, 12);
     width: 100%;
+    .checked-names{
+        padding: 1rem;
+    }
 }
 .container-show-button-if{
     border-top: 2px solid rgb(247, 5, 5);
     width: 100%;
-}
-.checked-names{
-    padding: 1rem;
-}
-.show-button{
-    color: red;
-}
-.button-show-if{
-    background-color: red;
-    color: white;
+    .show-button{
+        color: red;
+    }
+    .button-show-if{
+        background-color: red;
+        color: white;
+    }
 }
 </style>

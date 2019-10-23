@@ -38,6 +38,14 @@
                 Let You see Me!
             </button>
         </div>
+        <div v-if="showButtonIfIWriteSomething">
+            <p v-if="toggleText === true">
+                Yeah, great!
+            </p>
+            <p v-else>
+                No, isn't working!
+            </p>
+        </div>
     </div>
   </div>
 </template>
@@ -56,7 +64,8 @@ export default {
         {value: 'Natalia Opt'},
         {value: 'Kamil Opt'}
       ],
-      showButtonIfIWriteSomething: ''
+      showButtonIfIWriteSomething: '',
+      toggleText: 'true'
     }
   }
 }

@@ -98,7 +98,7 @@
             This is the box events mousemove change background!
         </div>
         <div class="padding-container">
-            Your name: <input v-model.lazy="userName"/>
+            Your name:  <input v-model.lazy="userName"/>
             <div v-if="userName"> Initial Value: {{ userName }}</div>
             <div v-if="userName"> Computed Value: {{ greeting }} </div>
         </div>

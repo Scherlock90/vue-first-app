@@ -149,6 +149,11 @@ export default {
     greeting () {
       return `You're a monster, ${this.userName}`
     }
+  },
+  watch: {
+    counter () {
+      console.log('The counter is changed!')
+    }
   }
 }
 </script>

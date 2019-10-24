@@ -95,7 +95,7 @@
             </div>
         </div>
         <div class="container-mousemove-change-background" :style="{ backgroundColor: `hsl(${x}, 80%, 50%` }" @mousemove="xCoordinate">
-            This is the box events mousemove change background!
+            This is the box events mousemove change background!a
         </div>
     </div>
   </div>

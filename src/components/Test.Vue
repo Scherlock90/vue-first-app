@@ -95,7 +95,12 @@
             </div>
         </div>
         <div class="container-mousemove-change-background" :style="{ backgroundColor: `hsl(${x}, 80%, 50%` }" @mousemove="xCoordinate">
-            This is the box events mousemove change background!a
+            This is the box events mousemove change background!
+        </div>
+        <div class="padding-container">
+            Your name: <input v-model.lazy="userName"/>
+            <div v-if="userName"> Initial Value: {{ userName }}</div>
+            <div v-if="userName"> Computed Value: {{ greeting }} </div>
         </div>
     </div>
   </div>
@@ -122,8 +127,12 @@ export default {
       counter: 0,
       testHtmlElements: 'test <a href="https://vuejs.org/">v-html</a>',
       counterMethods: 0,
-      x: 0
+      x: 0,
+      userName: ''
     }
+  },
+  props: {
+    title: String
   },
   methods: {
     increment () {
@@ -134,6 +143,11 @@ export default {
     },
     xCoordinate (e) {
       this.x = e.clientX
+    }
+  },
+  computed: {
+    greeting () {
+      return `You're a monster, ${this.userName}`
     }
   }
 }

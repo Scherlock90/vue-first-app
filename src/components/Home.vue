@@ -10,7 +10,7 @@
     <div>
       <router-link to="/Test">Go to Test</router-link>
     </div>
-    <Footer></Footer>
+    <Footer :testProps="msg"></Footer>
   </div>
 </template>
 

@@ -1,7 +1,12 @@
 <template>
   <div id="footer-container">
     <div class="footer">
-      {{ footerText }}
+      <div>
+        {{ footerText }}
+      </div>
+      <div>
+        Testing props: {{ testProps }}
+      </div>
     </div>
   </div>
 </template>
@@ -9,6 +14,7 @@
 <script>
 export default {
   name: 'Footer',
+  props: ['testProps'],
   data () {
     return {
       footerText: 'Footer is a test sharing components'
@@ -26,7 +32,7 @@ export default {
         margin-top: 1rem;
         background: rgb(187, 67, 67);
         color: #ffffff;
-        display: flex;
+        display: grid;
         align-items: center;
         justify-content: center;
         width: 30%;

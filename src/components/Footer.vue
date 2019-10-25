@@ -7,6 +7,9 @@
       <div>
         Testing props: {{ testProps }}
       </div>
+      <div>
+        Next props: {{ nextProps }}
+      </div>
     </div>
   </div>
 </template>
@@ -14,7 +17,10 @@
 <script>
 export default {
   name: 'Footer',
-  props: ['testProps'],
+  props: {
+    testProps: [String, Number],
+    nextProps: String
+  },
   data () {
     return {
       footerText: 'Footer is a test sharing components'

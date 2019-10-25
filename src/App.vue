@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div class="container-app">
+      <img src="./assets/logo.png">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -11,7 +13,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -19,5 +21,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container-app{
+    display: grid;
+    margin-left: 50%;
+    margin-right: 50%;
+  }
 }
 </style>

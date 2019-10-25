@@ -10,12 +10,18 @@
     <div>
       <router-link to="/Test">Go to Test</router-link>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
+import Footer from './Footer'
+
 export default {
   name: 'Home',
+  components: {
+    Footer
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App!',

@@ -19,7 +19,11 @@ export default {
   name: 'Footer',
   props: {
     testProps: [String, Number],
-    nextProps: String
+    nextProps: {
+      type: String,
+      required: true,
+      default: 'Default prop'
+    }
   },
   data () {
     return {

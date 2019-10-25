@@ -1,6 +1,8 @@
 <template>
-  <div class="footer">
+  <div id="footer-container">
+    <div class="footer">
       {{ footerText }}
+    </div>
   </div>
 </template>
 
@@ -15,15 +17,20 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+  #footer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .footer{
         margin-top: 1rem;
         background: rgb(187, 67, 67);
         color: #ffffff;
-        width: 100%;
-        height: 100px;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        width: 30%;
+        height: 100px;
     }
+  }
 </style>

@@ -1,10 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <div>
-      {{ newWord }}
-    </div>
-    <ChildComponent @sendMessageToParent="childMessageReceived" :messageTest="mess"></ChildComponent>
+    <!-- this is solution how to comunnicate events beetwen components => parent to child -->
+    <ChildComponent @sendMessageToParent="childMessageReceived" :messageTest="messTest"></ChildComponent>
     <router-link to="/">Go to Home</router-link>
   </div>
 </template>
@@ -20,13 +18,12 @@ export default {
   data () {
     return {
       msg: 'Welcome to Contact!',
-      newWord: 'Something',
-      mess: ''
+      messTest: ''
     }
   },
   methods: {
     childMessageReceived () {
-      this.mess = 'Create something else'
+      this.messTest = 'Create something else'
       console.log('message from child')
     }
   }

@@ -1,8 +1,8 @@
 <template>
   <div id="container-child-component">
-      <button @click="sendMessageToParent" class="button-event-communicate">
+      <b-button variant="outline-primary" @click="sendMessageToParent">
           Button to emit Events communication!
-      </button>
+      </b-button>
       <div class="events-communicate-text">
           {{ messageTest }}
       </div>
@@ -10,10 +10,15 @@
 </template>
 
 <script>
+import { BButton } from 'bootstrap-vue'
+
 export default {
   name: 'ChildComponent',
   props: {
     messageTest: String
+  },
+  components: {
+    'b-button': BButton
   },
   methods: {
     sendMessageToParent () {
@@ -27,14 +32,6 @@ export default {
 $margin: 1rem;
 #container-child-component{
     margin: $margin;
-    .button-event-communicate{
-        cursor: pointer;
-        background-color:lightgreen;
-        color: black;
-        font-size: 22px;
-        width: 200px;
-        border: 4px solid black;
-    }
     .events-communicate-text{
         margin: $margin;
         color: red;

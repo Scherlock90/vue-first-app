@@ -4,17 +4,30 @@
     <div>
       {{ newWord }}
     </div>
+    <ChildComponent @sendMessageToParent="childMessageReceived" :messageTest="mess"></ChildComponent>
     <router-link to="/">Go to Home</router-link>
   </div>
 </template>
 
 <script>
+import ChildComponent from './ChildComponent'
+
 export default {
   name: 'Contact',
+  components: {
+    ChildComponent
+  },
   data () {
     return {
       msg: 'Welcome to Contact!',
-      newWord: 'Something'
+      newWord: 'Something',
+      mess: ''
+    }
+  },
+  methods: {
+    childMessageReceived () {
+      this.mess = 'Create something else'
+      console.log('message from child')
     }
   }
 }

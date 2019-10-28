@@ -3,17 +3,21 @@
     <h1>{{ msg }}</h1>
     <!-- this is solution how to comunnicate events beetwen components => parent to child -->
     <ChildComponent @sendMessageToParent="childMessageReceived" :messageTest="messTest"></ChildComponent>
-    <router-link to="/">Go to Home</router-link>
+    <b-button variant="outline-primary">
+      <router-link to="/" class="router-link-custom">Go to Home</router-link>
+    </b-button>
   </div>
 </template>
 
 <script>
 import ChildComponent from './ChildComponent'
+import { BButton } from 'bootstrap-vue'
 
 export default {
   name: 'Contact',
   components: {
-    ChildComponent
+    ChildComponent,
+    'b-button': BButton
   },
   data () {
     return {
@@ -31,7 +35,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+//variables
+$white: #ffffff;
+
+//main code
 h1, h2 {
   font-weight: normal;
 }
@@ -45,5 +53,10 @@ li {
 }
 a {
   color: #42b983;
+}
+.router-link-custom{
+  &:hover{
+    color: $white;
+  }
 }
 </style>

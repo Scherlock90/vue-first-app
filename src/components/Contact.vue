@@ -12,7 +12,6 @@
       <div class="box two"></div>
       <div class="box three"></div>
     </div>
-    <router-link to="/">Go to Home</router-link>
     <!-- this is solution how to comunnicate events beetwen components => parent to child -->
     <ChildComponent @sendMessageToParent="childMessageReceived" :messageTest="messTest"></ChildComponent>
     <b-button variant="outline-primary">
@@ -48,11 +47,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+//variables
+$white: #ffffff;
+
+//main code
 .flex-container-test{
   display: flex;
   background: white;
   .box{
     width: 100px;
+    min-width: 100px;
     height: 100px;
   }
   .one{

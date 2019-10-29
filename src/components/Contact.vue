@@ -4,6 +4,14 @@
     <div>
       {{ newWord }}
     </div>
+    <div>
+      Down below is test flex-container
+    </div>
+    <div class="flex-container-test">
+      <div class="box one"></div>
+      <div class="box two"></div>
+      <div class="box three"></div>
+    </div>
     <router-link to="/">Go to Home</router-link>
   </div>
 </template>
@@ -21,19 +29,25 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+<style lang="scss" scoped>
+.flex-container-test{
+  display: flex;
+  background: white;
+  .box{
+    width: 100px;
+    height: 100px;
+  }
+  .one{
+    background-color: red;
+    flex-grow: 4;
+  }
+  .two{
+    background-color: greenyellow;
+    flex-grow: 2;
+  }
+  .three{
+    background-color: blue;
+    flex-grow: 6;
+  }
 }
 </style>

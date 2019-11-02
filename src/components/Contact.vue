@@ -68,7 +68,10 @@ $white: #ffffff;
     // flex-grow: 1;
 
     //another way to determining width minimum is a flex basis. But when we shrink the size then size box is changes to directly proportional
-    flex-basis: 300px;
+    // flex-basis: 300px;
+
+    //shortened write is flex: 1 (is flex-grow) 1 (is a flex-shrink) 200 (flex-basis);
+    flex: 1 0 200px;
   }
   .one{
     background-color: red;

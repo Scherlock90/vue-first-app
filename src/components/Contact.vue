@@ -56,7 +56,10 @@ $white: #ffffff;
   justify-content: center;
   background: white;
   //flexw-rap give us ability to move the element down
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
+
+  //wrap-reverse give us ability to move the element to up, otherwise set the first element
+  flex-wrap: wrap-reverse;
   .box{
     width: 320px;
     height: 100px;

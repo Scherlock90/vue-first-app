@@ -55,25 +55,30 @@ $white: #ffffff;
   display: flex;
   justify-content: center;
   background: white;
+  //flexw-rap give us ability to move the element down
+  flex-wrap: wrap;
   .box{
     width: 320px;
     height: 100px;
+    //flex-grow and min-width gives us change position of the element when the width is reduced to the minimum
+    min-width: 200px;
+    flex-grow: 1;
   }
   .one{
     background-color: red;
     //that is two ways to create flexible element who changes width when is changing device size
     // flex-grow: 4;
-    flex-shrink: 1;
+    // flex-shrink: 1;
   }
   .two{
     background-color: greenyellow;
     // flex-grow: 4;
-    flex-shrink: 2;
+    // flex-shrink: 2;
   }
   .three{
     background-color: blue;
     // flex-grow: 4;
-    flex-shrink: 3;
+    // flex-shrink: 3;
   }
 }
 .router-link-custom{

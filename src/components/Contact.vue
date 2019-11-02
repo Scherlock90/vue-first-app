@@ -59,13 +59,16 @@ $white: #ffffff;
   // flex-wrap: wrap;
 
   //wrap-reverse give us ability to move the element to up, otherwise set the first element
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   .box{
     width: 320px;
     height: 100px;
     //flex-grow and min-width gives us change position of the element when the width is reduced to the minimum
-    min-width: 200px;
-    flex-grow: 1;
+    // min-width: 200px;
+    // flex-grow: 1;
+
+    //another way to determining width minimum is a flex basis. But when we shrink the size then size box is changes to directly proportional
+    flex-basis: 300px;
   }
   .one{
     background-color: red;

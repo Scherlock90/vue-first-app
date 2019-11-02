@@ -53,23 +53,27 @@ $white: #ffffff;
 //main code
 .flex-container-test{
   display: flex;
+  justify-content: center;
   background: white;
   .box{
-    width: 100px;
-    min-width: 100px;
+    width: 320px;
     height: 100px;
   }
   .one{
     background-color: red;
-    flex-grow: 4;
+    //that is two ways to create flexible element who changes width when is changing device size
+    // flex-grow: 4;
+    flex-shrink: 1;
   }
   .two{
     background-color: greenyellow;
-    flex-grow: 2;
+    // flex-grow: 4;
+    flex-shrink: 2;
   }
   .three{
     background-color: blue;
-    flex-grow: 6;
+    // flex-grow: 4;
+    flex-shrink: 3;
   }
 }
 .router-link-custom{

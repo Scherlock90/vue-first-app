@@ -3,8 +3,8 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-function lazyLoad (view) {
-  return () => import(`@/components/${view}.vue`)
+function lazyLoad (url, view) {
+  return () => import(`@/components/${url}/${view}.vue`)
 }
 
 export default new Router({
@@ -14,22 +14,27 @@ export default new Router({
     {
       path: '*',
       name: 'NotFoundComponent',
-      component: lazyLoad('NotFoundComponent')
+      component: lazyLoad('not-found', 'NotFoundComponent')
     },
     {
       path: '/',
       name: 'Home',
-      component: lazyLoad('Home')
+      component: lazyLoad('home', 'Home')
     },
     {
-      path: '/Contact',
+      path: '/contact',
       name: 'Contact',
-      component: lazyLoad('Contact')
+      component: lazyLoad('contact', 'Contact')
     },
     {
-      path: '/Test',
-      name: 'Test',
-      component: lazyLoad('Test')
+      path: '/about-me',
+      name: 'About Me',
+      component: lazyLoad('about-me', 'AboutMe')
     }
+    // {
+    //   path: '/Test',
+    //   name: 'Test',
+    //   component: lazyLoad('testing-component', 'Test')
+    // }
   ]
 })

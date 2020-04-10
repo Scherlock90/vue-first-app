@@ -8,7 +8,6 @@
             {{ testArea }}
         </div>
     </div>
-    <!-- test v-model -->
     <div class="container-checked-names padding-container">
         <input type="checkbox" id="sebastian" value="Sebastian" v-model="checkedNames" />
         <label for="sebastian">Sebastian</label>
@@ -20,7 +19,6 @@
             Checked names: {{ checkedNames }}
         </div>
     </div>
-    <!-- test  v-for loops -->
     <div class="container-checked-names padding-container">
         <span v-for="(option, index) in options" v-bind:option="option" :key="index">
         <input type="checkbox" :id="option.value" :value="option.value"  v-model="checkedNamesOtherSolution"/>
@@ -34,21 +32,18 @@
     </div>
     <div class="container-show-button-if padding-container">
         <div class="show-button">Show Button Test !</div>
-        <!-- test v-model -> two way binding -->
         <textarea v-model="showButtonIfIWriteSomething"></textarea>
         <div>
             <button class="button-show-if" type="sumbit" v-if="showButtonIfIWriteSomething">
                 Let You see Me!
             </button>
         </div>
-        <!-- test v-bind or : -->
         <div>
             <input type="radio" id="yes" value="yes" v-model="toggleText"/>
             <label for="no" :class="[toggleText === 'yes' ? activeClass: '']">Yes!</label>
             <input type="radio" id="no" value="no" v-model="toggleText"/>
             <label for="no">No!</label>
         </div>
-        <!-- test v-if v-else -->
         <div v-if="toggleText">
             <p v-if="toggleText === 'yes'">
                 Yeah, great!
@@ -57,7 +52,6 @@
                 No, isn't working!
             </p>
         </div>
-        <!-- test v-pre -->
         <div>
             <span v-pre>
                 To decoumantion {{ vPreTest }}
@@ -71,20 +65,15 @@
         </div>
         <div>
             <div>
-                <!-- v-on = binding event -->
                 <button v-on:click="counter += 1">+</button>
-                <!-- @ shortcut to v-on: -->
                 <button @click="counter > 0 ? counter -= 1 : 0">-</button>
             </div>
             <div>
                 Counter: {{ counter }}
             </div>
-            <!-- test v-html -->
             <div v-html="testHtmlElements"></div>
-            <!-- test v-text -->
             <div v-text="showButtonIfIWriteSomething"></div>
         </div>
-        <!-- test methods binding -->
         <div>
             <div>
                 <button @click="increment">+</button>
@@ -109,6 +98,7 @@
 <script>
 export default {
   name: 'Test',
+
   data () {
     return {
       msg: 'Welcome to Test!',
@@ -131,25 +121,31 @@ export default {
       userName: ''
     }
   },
+
   props: {
     title: String
   },
+
   methods: {
     increment () {
       this.counterMethods++
     },
+
     decrement () {
       this.counterMethods--
     },
+
     xCoordinate (e) {
       this.x = e.clientX
     }
   },
+
   computed: {
     greeting () {
       return `You're a monster, ${this.userName}`
     }
   },
+
   watch: {
     counter () {
       console.log('The counter is changed!')
@@ -158,7 +154,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 //variable
 $color-white: #ffffff;
@@ -169,47 +164,59 @@ $color-href: #42b983;
 h1, h2 {
   font-weight: normal;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
 }
+
 a {
   color: $color-href;
 }
-.test{
+
+.test {
     display: grid;
     justify-content: center;
     align-items: center;
 }
-.padding-container{
+
+.padding-container {
     padding: 1rem;
 }
-.v-model-textarea{
+
+.v-model-textarea {
     border-top:  2px  solid $color-red;
 }
-.container-checked-names{
+
+.container-checked-names {
     border-top: 2px solid $color-dark;
     width: 100%;
-    .checked-names{
+
+    .checked-names {
         padding: 1rem;
     }
 }
-.container-show-button-if{
+
+.container-show-button-if {
     border-top: 2px solid $color-red;
     width: 100%;
-    .show-button{
+
+    .show-button {
         color: $color-red;
     }
-    .button-show-if{
+
+    .button-show-if {
         background-color: $color-red;
         color: $color-white;
     }
 }
-.container-mousemove-change-background{
+
+.container-mousemove-change-background {
     display: flex;
     justify-content: center;
     align-items: center;

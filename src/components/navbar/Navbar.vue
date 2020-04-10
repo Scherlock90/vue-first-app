@@ -1,28 +1,20 @@
 <template>
-  <div id="app">
-    <fixed-header>
-    <div class="navbar">
-      <navbar />
+    <div>
+         <b-nav small>
+            <b-nav-item to="/" active>Home</b-nav-item>
+            <b-nav-item to="/about-me">About Me</b-nav-item>
+            <b-nav-item to="/contact">Contact</b-nav-item>
+        </b-nav>
     </div>
-  </fixed-header>
-  <router-view/>
-  <Footer :testProps="msg" :nextProps="newWord"></Footer>
-  </div>
 </template>
 
 <script>
-import FixedHeader from 'vue-fixed-header'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-
-import Navbar from './components/navbar/Navbar'
-import Footer from './components/Footer'
+import { BNav, BNavItem } from 'bootstrap-vue'
 
 export default {
   components: {
-    FixedHeader,
-    Navbar,
-    Footer
+    'b-nav-item': BNavItem,
+    'b-nav': BNav
   }
 }
 </script>
@@ -43,8 +35,9 @@ body {
 
 .navbar {
   background-color: lightgrey;
-  height: 15%;
   display: flex;
+  height: 15%;
+  max-height: 50px;
   align-items: center;
 }
 

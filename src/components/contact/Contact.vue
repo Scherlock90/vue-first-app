@@ -51,7 +51,16 @@
 </template>
 
 <script>
-import { BButton, BCard, BForm, BFormCheckboxGroup, BFormCheckbox, BFormSelect, BFormInput } from 'bootstrap-vue'
+import {
+  BButton,
+  BCard,
+  BForm,
+  BFormGroup,
+  BFormCheckboxGroup,
+  BFormCheckbox,
+  BFormSelect,
+  BFormInput
+} from 'bootstrap-vue'
 
 export default {
   components: {
@@ -61,7 +70,8 @@ export default {
     BFormCheckboxGroup,
     BFormCheckbox,
     BFormSelect,
-    BFormInput
+    BFormInput,
+    BFormGroup
   },
 
   data () {

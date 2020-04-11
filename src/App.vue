@@ -6,7 +6,7 @@
     </div>
   </fixed-header>
   <router-view/>
-  <Footer :testProps="msg" :nextProps="newWord"></Footer>
+  <Footer></Footer>
   </div>
 </template>
 

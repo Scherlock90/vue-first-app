@@ -30,6 +30,11 @@ export default new Router({
       path: '/about-me',
       name: 'About Me',
       component: lazyLoad('about-me', 'AboutMe')
+    },
+    {
+      path: '/blog',
+      name: 'Blog',
+      component: lazyLoad('blog', 'Blog')
     }
     // {
     //   path: '/Test',

@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import makeStore from './store/store'
+
+const store = makeStore
 
 Vue.config.productionTip = false
 
@@ -10,6 +13,7 @@ Vue.config.productionTip = false
 const vm = new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

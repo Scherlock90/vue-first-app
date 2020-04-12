@@ -3,8 +3,8 @@
     <div>
       Blog
     </div>
-    <div>
-      {{ hasUsers.map(user => user.name) }}
+    <div v-for="user in users" :key="user.name">
+      {{ user.name }}
     </div>
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
     ...mapActions(ns.USERS, ['storeUsers']),
     hasUsers: {
       get () {
-        return this.$store.state.users.usersState
+        return this.usersState
       },
       set (value) {
         this.storeUsers(value)
@@ -32,13 +32,19 @@ export default {
     }
   },
   mounted () {
-    console.log('Blog')
     console.log(this.usersState)
     console.log(this.$store.state.users.usersState)
+    this.updateUsers(this.usersState)
+    console.log(this.$data.users)
+  },
+  methods: {
+    ...mapActions({setUser: 'users/storeUsers'}),
+    updateUsers () {
+      this.setUser({ name: 'third user' })
+
+      this.$data.users = this.hasUsers
+    }
   }
-  // methods: {
-  //   ...mapActions(ns.USERS, ['storeUsers'])
-  // }
 }
 </script>
 

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VuexPersistence from 'vuex-persist'
-// import router from '@router';
+import router from '../router'
 
 // import makeQuickBookingModule from '@store/modules/quickBooking';
 // import makeUserModule from '@store/modules/user';
@@ -27,11 +27,11 @@ export default function makeStore (api, initialConfig = {}) {
     mutations: {
       RESTORE_MUTATION: vuexLocal.RESTORE_MUTATION
     },
-    // actions: {
-    //     routerPush (_, arg) {
-    //         router.push(arg);
-    //     },
-    // },
+    actions: {
+      routerPush (_, arg) {
+        router.push(arg)
+      }
+    },
     modules: {
       users: makeUserModule(api)
     },

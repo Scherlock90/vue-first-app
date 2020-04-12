@@ -14,14 +14,14 @@ export default function makeUsersModule (api) {
   const getters = {}
 
   const mutations = {
-    setUsers: (state, usersState) => {
-      state.usersState = usersState
+    setUsers: (state, newUsersState) => {
+      state.usersState = [...state.usersState, newUsersState]
     }
   }
 
   const actions = {
-    storeUsers: ({ commit }, usersState) => {
-      commit('setUsers', usersState)
+    storeUsers: ({ commit }, newUsersState) => {
+      commit('setUsers', newUsersState)
     }
   }
 

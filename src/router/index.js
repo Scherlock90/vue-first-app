@@ -1,13 +1,11 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-
-Vue.use(Router)
+import VueRouter from 'vue-router'
 
 function lazyLoad (url, view) {
   return () => import(`@/components/${url}/${view}.vue`)
 }
 
-export default new Router({
+const router = new VueRouter({
   base: '/vue-first-app/',
   mode: 'history',
   routes: [
@@ -43,3 +41,7 @@ export default new Router({
     // }
   ]
 })
+
+Vue.use(VueRouter)
+
+export default router

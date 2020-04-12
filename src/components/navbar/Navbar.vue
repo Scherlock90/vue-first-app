@@ -2,7 +2,7 @@
     <div>
          <b-nav small>
             <b-nav-item to="/" active>Home</b-nav-item>
-            <b-nav-item to="/about-me">About Me</b-nav-item>
+            <b-nav-item to="about-me">About Me</b-nav-item>
             <b-nav-item to="/contact">Contact</b-nav-item>
             <b-nav-item to="/blog">Blog</b-nav-item>
         </b-nav>

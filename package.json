@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.4",
+    "sass": "^1.26.3",
     "travis": "^0.1.1",
     "vue": "^2.5.2",
     "vue-fixed-header": "^3.2.14",

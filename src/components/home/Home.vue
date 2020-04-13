@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div id="home-container">
     <h1>{{ msg }}</h1>
     <div>
       {{ newWord }}
@@ -19,8 +19,8 @@ export default {
 </script>
 
 <style scoped>
-.hello{
-  height: 90%;
+#home-container{
+  height: 100%;
 }
 
 h1, h2 {

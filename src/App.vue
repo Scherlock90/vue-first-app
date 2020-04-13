@@ -5,7 +5,9 @@
       <navbar />
     </div>
   </fixed-header>
-  <router-view/>
+  <div class="container-router">
+    <router-view/>
+  </div>
   <Footer></Footer>
   </div>
 </template>
@@ -16,7 +18,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import Navbar from './components/navbar/Navbar'
-import Footer from './components/Footer'
+import Footer from './components/footer/Footer'
 
 export default {
   components: {
@@ -39,6 +41,10 @@ body {
   text-align: center;
   color: #2c3e50;
   height: 100vh;
+}
+
+.container-router{
+  min-height: 88vh;
 }
 
 .navbar {

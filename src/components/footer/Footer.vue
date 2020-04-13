@@ -20,20 +20,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/styles/app';
+
   #footer-container{
     display: flex;
     align-items: flex-end;
-    height: 6%;
+    height: 8vh;
+    width: 100%;
+
+    @include sm-max {
+      height: 5vh;
+    }
 
     .footer{
-        margin-top: 1rem;
         background: rgb(187, 67, 67);
         color: #ffffff;
         display: grid;
         align-items: center;
         justify-content: center;
         width: 100%;
-        min-height: 20%;
+        height: 100%;
     }
   }
 </style>

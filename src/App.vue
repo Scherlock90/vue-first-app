@@ -30,8 +30,11 @@ export default {
 </script>
 
 <style lang="scss">
+@import './assets/styles/app';
+
 body {
   height: 100vh;
+  background-color: $background-color;
 }
 
 #app {
@@ -40,24 +43,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height: 100vh;
+  height: 97vh;
+  background-color: $background-color;
 }
 
 .container-router{
-  min-height: 88vh;
-}
+  min-height: 89%;
+  background: #ffffff;
 
-.navbar {
-  background-color: lightgrey;
-  height: 15%;
-  display: flex;
-  align-items: center;
-}
-
-.navbar.vue-fixed-header--isFixed {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
+  @include sm-max {
+    min-height: 88vh;
+  }
 }
 </style>

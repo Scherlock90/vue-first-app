@@ -27,7 +27,7 @@ export default {
   background-color: $background-color;
   display: flex;
   height: 15%;
-  max-height: 50px;
+  max-height: 3rem;
   align-items: center;
 
   .nav-link{

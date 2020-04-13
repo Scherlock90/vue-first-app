@@ -12,8 +12,18 @@ export default {
   data () {
     return {
       msg: 'Welcome to Vue.js App!',
-      newWord: 'Something'
+      newWord: 'Something',
+      geolection: 0
     }
+  },
+  methods: {
+    geolocation () {
+      console.log(navigator.geolocation.getCurrentPosition())
+      this.geolection = navigator.geolocation.getCurrentPosition()
+    }
+  },
+  mounted () {
+    this.geolocation()
   }
 }
 </script>

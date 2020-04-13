@@ -25,7 +25,7 @@ export default {
   #footer-container{
     display: flex;
     align-items: flex-end;
-    height: 8vh;
+    height: 4vh;
     width: 100%;
 
     @include sm-max {

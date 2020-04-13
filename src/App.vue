@@ -34,7 +34,7 @@ export default {
 
 body {
   height: 100vh;
-  background-color: $background-color;
+  background-color: $background-color !important;
 }
 
 #app {
@@ -48,7 +48,7 @@ body {
 }
 
 .container-router{
-  min-height: 89%;
+  min-height: 95%;
   background: #ffffff;
 
   @include sm-max {

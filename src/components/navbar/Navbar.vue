@@ -25,7 +25,6 @@ export default {
 
 .navbar {
   background-color: $background-color;
-  display: flex;
   height: 15%;
   max-height: 3rem;
   align-items: center;
@@ -37,9 +36,10 @@ export default {
 }
 
 .navbar.vue-fixed-header--isFixed {
-  position: fixed;
+  position: sticky;
   left: 0;
   top: 0;
   width: 100vw;
+  z-index: 1000000;
 }
 </style>

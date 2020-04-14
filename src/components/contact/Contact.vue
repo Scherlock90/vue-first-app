@@ -1,11 +1,11 @@
 <template>
   <div class="contact">
+    <div class="container-form">
       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
         <b-form-group
           id="input-group-1"
           label="Email address:"
           label-for="input-1"
-          description="We'll never share your email with anyone else."
         >
           <b-form-input
             id="input-1"
@@ -25,13 +25,13 @@
           ></b-form-input>
         </b-form-group>
 
-        <b-form-group id="input-group-3" label="Food:" label-for="input-3">
-          <b-form-select
-            id="input-3"
-            v-model="form.food"
-            :options="foods"
+        <b-form-group id="input-group-2" label="Your body:" label-for="input-2">
+          <b-form-input
+            id="input-2"
+            v-model="form.body"
             required
-          ></b-form-select>
+            placeholder="Enter body"
+          ></b-form-input>
         </b-form-group>
 
         <b-form-group id="input-group-4">
@@ -44,23 +44,48 @@
         <b-button type="submit" variant="primary">Submit</b-button>
         <b-button type="reset" variant="danger">Reset</b-button>
       </b-form>
-      <!-- <b-card class="mt-3" header="Form Data Result">
-        <pre class="m-0">{{ form }}</pre>
-      </b-card> -->
+    </div>
+    <div class="geolocation">
+        <GmapMap
+          :center="{lat:52.7632218, lng:23.5830237}"
+          :zoom="14"
+          map-type-id="terrain"
+          style="width: 500px; height: 300px"
+        >
+          <GmapMarker
+            :key="index"
+            v-for="(m, index) in markers"
+            :position="m.position"
+            :clickable="true"
+            :draggable="true"
+            @click="center=m.position"
+          />
+        </GmapMap>
+      <b-button type="button" variant="primary" v-on:click="geolocation">Take your's location</b-button>
+      <a id="map-link"></a>
+    </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import * as VueGoogleMaps from 'vue2-google-maps'
 import {
   BButton,
   BCard,
   BForm,
-  BFormGroup,
   BFormCheckboxGroup,
   BFormCheckbox,
   BFormSelect,
-  BFormInput
+  BFormInput,
+  BFormGroup
 } from 'bootstrap-vue'
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    libraries: 'places'
+  }
+})
 
 export default {
   components: {
@@ -74,18 +99,19 @@ export default {
     BFormGroup
   },
 
-  data () {
-    return {
-      form: {
-        email: '',
-        name: '',
-        food: null,
-        checked: []
-      },
-      foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
-      show: true
-    }
-  },
+  data: () => ({
+    form: {
+      email: '',
+      name: '',
+      body: '',
+      checked: []
+    },
+    geolection: 0,
+    latitude: 0,
+    longitude: 0,
+    status: '',
+    show: true
+  }),
 
   methods: {
     onSubmit (evt) {
@@ -93,14 +119,37 @@ export default {
       alert(JSON.stringify(this.form))
     },
 
+    geolocation () {
+      if (navigator.geolocation) {
+        const mapLink = document.querySelector('#map-link')
+
+        const success = (position) => {
+          const lat = position.coords.latitude
+          const lang = position.coords.longitude
+
+          // mapLink.href = `https://www.openstreetmap.org/#map=18/${lat}/${lang}`
+          mapLink.textContent = `Latitude: ${lat} °, Longitude: ${lang} °`
+        }
+
+        const error = () => {
+          console.log('Unable to retrieve your location')
+        }
+
+        if (!navigator.geolocation) {
+          console.log('Geolocation is not supported by your browser')
+        } else {
+          console.log('Locating…')
+          navigator.geolocation.getCurrentPosition(success, error, { maximumAge: 60000, timeout: 5000, enableHighAccuracy: true })
+        }
+      }
+    },
+
     onReset (evt) {
       evt.preventDefault()
-      // Reset our form values
       this.form.email = ''
       this.form.name = ''
-      this.form.food = null
+      this.form.body = ''
       this.form.checked = []
-      // Trick to reset/clear native browser form validation state
       this.show = false
       this.$nextTick(() => {
         this.show = true
@@ -111,32 +160,52 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$white: #ffffff;
+@import '../../assets/styles/app';
 
-//main code
 .contact {
   height: 90%;
-  display: flex;
-  justify-content: center;
   padding-top: 10%;
-}
-.flex-container-test{
   display: flex;
-  justify-content: center;
-  background: white;
-  flex-wrap: wrap;
 
-  .box{
-    width: 320px;
-    height: 100px;
-    flex: 1 0 200px;
+  @include sm-max {
+    display: grid;
+  }
+
+  .container-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+
+    @include sm-max {
+      width: 100%;
+    }
+  }
+
+  .geolocation {
+    width: 50%;
+    padding: 2%;
+    display: grid;
+    justify-content: left;
+    align-items: center;
+
+    @include sm-max {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .vue-map-container{
+      @include sm-max {
+        width: 100% !important;
+        min-width: 310px;
+      }
+    }
   }
 }
 
-.router-link-custom{
-
-  &:hover{
-    color: $white;
+.router-link-custom {
+  &:hover {
+    color: #ffffff;
   }
 }
 </style>

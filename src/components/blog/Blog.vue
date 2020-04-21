@@ -42,10 +42,6 @@ export default {
     console.log(this.usersState)
     console.log('this update')
   },
-  updated () {
-    console.log(this.users)
-    this.updateUsers()
-  },
 
   methods: {
     ...mapActions({setUser: 'users/storeUsers', userFromApi: 'users/storeUsersFromService'}),

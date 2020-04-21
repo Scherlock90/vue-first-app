@@ -25,8 +25,8 @@ export default function makeUsersModule () {
       commit('setUsers', newUsersState)
     },
     storeUsersFromService: async ({ commit }) => {
-      const { data } = await userService.get().catch(err => console.error(err))
-      console.log(data)
+      const { data } = await userService.get()
+        .catch(err => console.error(err))
       await commit('setUsers', data)
     }
   }

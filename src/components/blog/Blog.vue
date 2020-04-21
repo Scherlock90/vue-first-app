@@ -39,21 +39,16 @@ export default {
   },
   mounted () {
     this.updateUsers()
-    console.log(this.usersState)
-    console.log('this update')
   },
 
   methods: {
     ...mapActions({setUser: 'users/storeUsers', userFromApi: 'users/storeUsersFromService'}),
-    updateUsers () {
-      // this.setUser({ name: 'third user' })
+    async updateUsers () {
       try {
-        this.userFromApi()
+        await this.userFromApi()
       } catch (err) {
         console.log(err)
       }
-      // const { data } = await UserService.get()
-      // console.log(data)
 
       this.users = this.hasUsers
     }

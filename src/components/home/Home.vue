@@ -1,7 +1,16 @@
 <template>
   <div id="home-container">
     <sections sectionName="Repository" sectionId="repository">
-          <carousel carouselId="repository-carousel" :objectCarousel="repoArray"/>
+      <b-card
+        img-src="https://picsum.photos/600/300/?image=25"
+        img-alt="github repository"
+        img-top
+        tag="article"
+        style="max-width: 20rem;"
+        class="mb-2"
+      >
+    <b-button href="#" variant="primary">GITHUB REPOSITORY</b-button>
+  </b-card>
     </sections>
     <sections sectionName="Tech Stack" sectionId="tech-stack">
       <div class="tech-stack-container">
@@ -14,15 +23,17 @@
 </template>
 
 <script>
+import { BCard, BCardText } from 'bootstrap-vue'
+
 import Sections from './sections/Sections'
 import GridSections from './grid-sections/GridSections'
-import Carousel from './carosuel/Carousel'
 
 export default {
   components: {
     'grid-sections': GridSections,
     'sections': Sections,
-    'carousel': Carousel
+    'b-card': BCard,
+    'b-card-text': BCardText
   },
 
   data () {

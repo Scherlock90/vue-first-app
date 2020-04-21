@@ -2,12 +2,15 @@ language: node_js
 
 node_js:
   - "stable"
+
 cache: npm
 
 install:
   - npm install
+
 before_script:
   - npm ci
+
 script:
   - CI=false npm run build
 
@@ -15,6 +18,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github-token: $GITHUB_TOKEN
-  local_dir: build
+  local_dir: docs
   on:
     branch: master

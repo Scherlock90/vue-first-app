@@ -8,8 +8,11 @@ cache: npm
 install:
   - npm install
 
+before_script:
+  - npm ci
+
 script:
-  - npm run build && npm run deploy
+  - CI=false npm deploy
 
 deploy:
   provider: pages

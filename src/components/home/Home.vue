@@ -2,15 +2,18 @@
   <div id="home-container">
     <sections sectionName="Repository" sectionId="repository">
       <b-card
-        img-src="https://picsum.photos/600/300/?image=25"
+        :img-src="require(`../../assets/images/Github-logo.jpg`)"
         img-alt="github repository"
         img-top
-        tag="article"
-        style="max-width: 20rem;"
+        style="max-width: 60rem;"
         class="mb-2"
+        :no-body="true"
+        v-on:click="goToRepository"
       >
-    <b-button href="#" variant="primary">GITHUB REPOSITORY</b-button>
-  </b-card>
+        <b-card-text>
+          Press and you are already in the repository!
+        </b-card-text>
+      </b-card>
     </sections>
     <sections sectionName="Tech Stack" sectionId="tech-stack">
       <div class="tech-stack-container">
@@ -45,15 +48,13 @@ export default {
         { path: 'vue.png', title: 'Vue.js' },
         { path: 'webpack.png', title: 'Webpack' },
         { path: 'sass.png', title: 'Sass' }
-      ],
-      repoArray: [
-        { path: 'flex-panel-gallery.png', title: 'Flex Panel Gallery' },
-        { path: 'my-wedding-page.png', title: 'My Wedding Page' },
-        { path: 'api-redux.png', title: 'API Blog' },
-        { path: 'photo-modifier.png', title: 'Photo Modifier' },
-        { path: 'task-charts.png', title: 'Dashboard With Charts' },
-        { path: 'cities-changer.png', title: 'Cities Changer' }
       ]
+    }
+  },
+
+  methods: {
+    goToRepository () {
+      window.location.href = 'https://github.com/Scherlock90'
     }
   }
 }
@@ -79,6 +80,12 @@ export default {
   margin-left: auto;
   max-height: 1400px;
   max-width: 1800px;
+  cursor: pointer;
+
+  .card-text{
+    font-size: $mobile-font-size;
+    color: $second-color;
+  }
 }
 
 .tech-stack-container {

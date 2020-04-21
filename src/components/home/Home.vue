@@ -2,7 +2,7 @@
   <div id="home-container">
     <sections sectionName="Repository" sectionId="repository">
       <b-card
-        :img-src="require(`../../assets/images/Github-logo.jpg`)"
+        :img-src="require(`../../assets/images/Github-logo.png`)"
         img-alt="github repository"
         img-top
         style="max-width: 60rem;"

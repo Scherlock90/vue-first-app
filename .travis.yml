@@ -12,7 +12,7 @@ before_script:
   - npm ci
 
 script:
-  - CI=false npm deploy
+  - CI=false npm run deploy
 
 deploy:
   provider: pages

@@ -3,7 +3,7 @@
     <div>
       Blog
     </div>
-    <div v-for="user in users" :key="user.name">
+    <div v-for="user in users[0]" :key="user.name">
       {{ user.name }}
     </div>
   </div>
@@ -12,6 +12,9 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import * as ns from '../../store/namespaces'
+// import { ServiceFactory } from '../../api/ServiceFactory'
+
+// const UserService = ServiceFactory.get('users')
 
 export default {
   computed: {
@@ -31,18 +34,32 @@ export default {
       users: []
     }
   },
-  mounted () {
-    console.log(this.usersState)
-    console.log(this.$store.state.users.usersState)
-    this.updateUsers(this.usersState)
-    console.log(this.$data.users)
+  created () {
+    this.updateUsers()
   },
-  methods: {
-    ...mapActions({setUser: 'users/storeUsers'}),
-    updateUsers () {
-      this.setUser({ name: 'third user' })
+  mounted () {
+    this.updateUsers()
+    console.log(this.usersState)
+    console.log('this update')
+  },
+  updated () {
+    console.log(this.users)
+    this.updateUsers()
+  },
 
-      this.$data.users = this.hasUsers
+  methods: {
+    ...mapActions({setUser: 'users/storeUsers', userFromApi: 'users/storeUsersFromService'}),
+    updateUsers () {
+      // this.setUser({ name: 'third user' })
+      try {
+        this.userFromApi()
+      } catch (err) {
+        console.log(err)
+      }
+      // const { data } = await UserService.get()
+      // console.log(data)
+
+      this.users = this.hasUsers
     }
   }
 }

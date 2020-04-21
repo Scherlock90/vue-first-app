@@ -72,6 +72,10 @@
     .title{
         color: $color-background;
 
+        @include sm-max {
+            background-color: $background-color;
+        }
+
         &__name{
             background-color: $background-color;
         }

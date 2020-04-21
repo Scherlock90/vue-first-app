@@ -24,11 +24,14 @@ export default {
 @import '../../../assets/styles/app';
 
 .header-section {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
+  text-align: left;
+  background: $second-color;
+  color: $main-color;
+  width: 22%;
 
    @include sm-max {
-    font-size: 160%;
+    width: 100%;
+    font-size: 2rem;
   }
 }
 </style>

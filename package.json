@@ -16,6 +16,7 @@
     "deploy": "node ./node_modules/vue-gh-pages/index.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "bootstrap-vue": "^2.0.4",
     "sass": "^1.26.3",
     "travis": "^0.1.1",

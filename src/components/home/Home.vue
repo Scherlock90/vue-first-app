@@ -1,16 +1,7 @@
 <template>
   <div id="home-container">
-    <h1>{{ msg }}</h1>
     <sections sectionName="Repository" sectionId="repository">
-      <div class="tech-stack-container">
-        <div class="transition-element" v-for="repo in repoArray" :key="repo.path">
-          <grid-sections :title="repo.title" :src="require(`../../assets/images/repo-images/${repo.path}`)" >
-            <!-- <b-card-text>
-              txt
-            </b-card-text> -->
-          </grid-sections>
-        </div>
-      </div>
+          <carousel carouselId="repository-carousel" :objectCarousel="repoArray"/>
     </sections>
     <sections sectionName="Tech Stack" sectionId="tech-stack">
       <div class="tech-stack-container">
@@ -25,16 +16,17 @@
 <script>
 import Sections from './sections/Sections'
 import GridSections from './grid-sections/GridSections'
+import Carousel from './carosuel/Carousel'
 
 export default {
   components: {
     'grid-sections': GridSections,
-    'sections': Sections
+    'sections': Sections,
+    'carousel': Carousel
   },
 
   data () {
     return {
-      msg: 'SEN JS SEBASTIAN NAPORA',
       techStackArray: [
         { path: 'ts.png', title: 'TypeScript' },
         { path: 'JS.png', title: 'JavaScript' },
@@ -44,9 +36,12 @@ export default {
         { path: 'sass.png', title: 'Sass' }
       ],
       repoArray: [
+        { path: 'flex-panel-gallery.png', title: 'Flex Panel Gallery' },
+        { path: 'my-wedding-page.png', title: 'My Wedding Page' },
         { path: 'api-redux.png', title: 'API Blog' },
+        { path: 'photo-modifier.png', title: 'Photo Modifier' },
         { path: 'task-charts.png', title: 'Dashboard With Charts' },
-        { path: 'flex-panel-gallery.png', title: 'Dashboard With Charts' }
+        { path: 'cities-changer.png', title: 'Cities Changer' }
       ]
     }
   }
@@ -58,13 +53,21 @@ export default {
 
 #home-container {
   height: 100%;
+  background-color: $main-color;
 }
 
 #tech-stack, #repository {
-  padding: 2%;
-  display: flex;
+  padding: 2% 2%;
+  display: grid;
   justify-content: center;
   align-items: center;
+}
+
+#repository {
+  margin-right: auto;
+  margin-left: auto;
+  max-height: 1400px;
+  max-width: 1800px;
 }
 
 .tech-stack-container {
@@ -77,7 +80,7 @@ export default {
     display: grid;
     justify-content: center;
     grid-template-columns: 320px 320px 320px;
-    grid-template-rows: auto;
+    grid-template-rows: 320px 320px 320px;
   }
 
   @include sm-max {

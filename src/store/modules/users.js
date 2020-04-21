@@ -1,14 +1,15 @@
-export default function makeUsersModule (api) {
+import { ServiceFactory } from '../../api/ServiceFactory'
+
+const userService = ServiceFactory.get('users')
+
+export default function makeUsersModule () {
   // const faresApi = api.get('fares');
   // const ordersApi = api.get('orders');
 
   const namespaced = true
 
   const state = {
-    usersState: [
-      { name: 'first user' },
-      { name: 'second user' }
-    ]
+    usersState: []
   }
 
   const getters = {}
@@ -22,6 +23,11 @@ export default function makeUsersModule (api) {
   const actions = {
     storeUsers: ({ commit }, newUsersState) => {
       commit('setUsers', newUsersState)
+    },
+    storeUsersFromService: async ({ commit }) => {
+      const { data } = await userService.get().catch(err => console.error(err))
+      console.log(data)
+      await commit('setUsers', data)
     }
   }
 

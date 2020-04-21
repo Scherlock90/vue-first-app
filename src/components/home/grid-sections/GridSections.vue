@@ -27,6 +27,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../../assets/styles/app';
+
 #grid-sections {
   height: 100%;
 }
@@ -40,6 +42,15 @@ export default {
   }
 
   &:hover {
+    @include md {
+    -ms-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+    z-index: 1000;
+  }
+
     .card-title {
       display: block !important;
     }

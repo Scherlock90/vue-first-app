@@ -6,7 +6,7 @@
           <cards
             v-for="stack in techStackArray"
             :key="stack.path"
-            :pathToImage="require(`../../assets/images/tech-stack/${stack.path}`)"
+            :pathToImage="require(`../../assets/images/tech-stack/` + stack.path)"
             :nameImage="stack.title"
             :description="stack.description"
             :title="stack.title"

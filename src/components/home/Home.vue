@@ -1,53 +1,48 @@
 <template>
   <div id="home-container">
-    <sections sectionName="Repository" sectionId="repository">
-      <b-card
-        :img-src="require(`../../assets/images/Github-logo.png`)"
-        img-alt="github repository"
-        img-top
-        style="max-width: 60rem;"
-        class="mb-2"
-        :no-body="true"
-        v-on:click="goToRepository"
-      >
-        <b-card-text>
-          Press and you are already in the repository!
-        </b-card-text>
-      </b-card>
-    </sections>
-    <sections sectionName="Tech Stack" sectionId="tech-stack">
-      <div class="tech-stack-container">
-        <div class="transition-element" v-for="stack in techStackArray" :key="stack.path">
-          <grid-sections :title="stack.title" :src="require(`../../assets/images/tech-stack/${stack.path}`)"/>
-        </div>
-      </div>
-    </sections>
+    <div class="outer-container home-page">
+    <div class="container-fluid">
+        <div class="row">
+          <cards
+            v-for="stack in techStackArray"
+            :key="stack.path"
+            :pathToImage="require(`../../assets/images/tech-stack/${stack.path}`)"
+            :nameImage="stack.title"
+            :description="stack.description"
+            :title="stack.title"
+            :redirect="stack.redirect"
+          />
+        </div><!-- .row -->
+    </div><!-- .container-fluid -->
+</div>
   </div>
 </template>
 
 <script>
-import { BCard, BCardText } from 'bootstrap-vue'
-
-import Sections from './sections/Sections'
-import GridSections from './grid-sections/GridSections'
+import Cards from './cards/Cards'
 
 export default {
   components: {
-    'grid-sections': GridSections,
-    'sections': Sections,
-    'b-card': BCard,
-    'b-card-text': BCardText
+    'cards': Cards
   },
 
   data () {
     return {
       techStackArray: [
-        { path: 'ts.png', title: 'TypeScript' },
-        { path: 'JS.png', title: 'JavaScript' },
-        { path: 'React.png', title: 'React.js' },
-        { path: 'vue.png', title: 'Vue.js' },
-        { path: 'webpack.png', title: 'Webpack' },
-        { path: 'sass.png', title: 'Sass' }
+        { path: 'github.png', title: 'My repository', description: 'My github repository', redirect: 'https://github.com/Scherlock90' },
+        { path: 'ts.png', title: 'TypeScript', description: 'My tech stack' },
+        { path: 'js.png', title: 'JavaScript', description: 'My tech stack' },
+        { path: 'react.png', title: 'React.js', description: 'My tech stack' },
+        { path: 'redux.png', title: 'Redux', description: 'My tech stack' },
+        { path: 'vue.png', title: 'Vue.js', description: 'My tech stack' },
+        { path: 'vuex.png', title: 'Vuex', description: 'My tech stack' },
+        { path: 'kentico.png', title: 'Kentico Cloud CMS', description: 'My tech stack' },
+        { path: 'lerna-js.png', title: 'Lerna.js', description: 'My tech stack' },
+        { path: 'travis-ci.png', title: 'Travis CI', description: 'My tech stack' },
+        { path: 'webpack.png', title: 'Webpack', description: 'My tech stack' },
+        { path: 'sass.png', title: 'Sass', description: 'My tech stack' },
+        { path: 'styled-components.png', title: 'Styled components', description: 'My tech stack' },
+        { path: 'bootstrap.png', title: 'Bootstrap', description: 'My tech stack' }
       ]
     }
   },
@@ -65,6 +60,7 @@ export default {
 
 #home-container {
   height: 100%;
+  padding: 0 0 0 5%;
   background-color: $main-color;
 }
 
@@ -79,8 +75,11 @@ export default {
   margin-right: auto;
   margin-left: auto;
   max-height: 1400px;
-  max-width: 1800px;
-  cursor: pointer;
+  max-width: 1400px;
+
+  .repo {
+    cursor: pointer;
+  }
 
   .card-text{
     font-size: $mobile-font-size;
@@ -91,14 +90,14 @@ export default {
 .tech-stack-container {
 
   .transition-element{
-    width: 320px;
+    width: 240px;
   }
 
   @include md {
     display: grid;
     justify-content: center;
-    grid-template-columns: 320px 320px 320px;
-    grid-template-rows: 320px 320px 320px;
+    grid-template-columns: 240px 240px 240px;
+    grid-template-rows: 240px 240px 240px;
   }
 
   @include sm-max {

@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.0.4",
     "sass": "^1.26.3",
     "travis": "^0.1.1",
@@ -76,8 +77,8 @@
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
-    "vue-loader": "^13.3.0",
     "vue-jest": "^1.0.2",
+    "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",

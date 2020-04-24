@@ -34,11 +34,6 @@ const router = new VueRouter({
       name: 'Blog',
       component: lazyLoad('blog', 'Blog')
     }
-    // {
-    //   path: '/Test',
-    //   name: 'Test',
-    //   component: lazyLoad('testing-component', 'Test')
-    // }
   ]
 })
 

@@ -4,11 +4,10 @@
     <div class="navbar">
       <navbar />
     </div>
-  </fixed-header>
-  <div class="container-router">
-    <router-view/>
-  </div>
-  <Footer></Footer>
+    </fixed-header>
+    <div class="container-router">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -18,13 +17,11 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import Navbar from './components/navbar/Navbar'
-import Footer from './components/footer/Footer'
 
 export default {
   components: {
     FixedHeader,
-    Navbar,
-    Footer
+    Navbar
   }
 }
 </script>
@@ -43,15 +40,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height: 97vh;
+  height: 100vh;
   background-color: $background-color;
 }
 
 .container-router{
-  min-height: 95%;
+  min-height: 100%;
   background: #ffffff;
 
   @include sm-max {
+    padding: 0 0 0 8%;
     min-height: 88vh;
   }
 }

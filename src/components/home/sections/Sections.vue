@@ -25,9 +25,8 @@ export default {
 
 .header-section {
   text-align: left;
-  background: $second-color;
-  color: $main-color;
-  width: 22%;
+  color: black;
+  width: 100%;
 
    @include sm-max {
     width: 100%;

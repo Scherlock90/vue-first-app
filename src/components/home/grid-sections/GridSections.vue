@@ -59,7 +59,7 @@ export default {
 }
 
 .card-img {
-  min-width: 310px;
+  min-width: 220px;
   height: 100%;
 }
 </style>

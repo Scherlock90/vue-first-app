@@ -4,7 +4,7 @@
       <div class="site-branding">
         <h1 :class="switchClassHamburger">
           <router-link to="/">
-            <img :src="require('../../assets/images/logo-sen.png')" alt="Logo" />
+            <img class="logo-type" :src="require('../../assets/images/logo-sen.png')" alt="Logo" />
           </router-link>
         </h1>
       </div>
@@ -94,6 +94,10 @@ export default {
     .no-padding {
         padding: 0;
     }
+}
+
+.logo-type{
+  border-radius: 100%;
 }
 
 .site-branding {

@@ -62,6 +62,10 @@ export default {
   height: 100%;
   padding: 0 0 0 5%;
   background-color: $main-color;
+
+  @include sm-max {
+    padding: 0;
+  }
 }
 
 #tech-stack, #repository {

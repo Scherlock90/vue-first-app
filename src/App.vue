@@ -49,8 +49,7 @@ body {
   background: #ffffff;
 
   @include sm-max {
-    padding: 0 0 0 8%;
-    min-height: 88vh;
+    min-height: 100vh;
   }
 }
 </style>

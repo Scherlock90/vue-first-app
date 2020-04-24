@@ -51,4 +51,8 @@ export default {
 .blog-page .blog-content figure img {
   background-color: #fff;
 }
+
+.blog-page .blog-content header {
+  text-align: left;
+}
 </style>

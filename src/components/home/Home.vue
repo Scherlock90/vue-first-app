@@ -30,9 +30,9 @@ export default {
     return {
       techStackArray: [
         { path: 'github.png', title: 'My repository', description: 'My github repository', redirect: 'https://github.com/Scherlock90' },
-        { path: 'ts.png', title: 'TypeScript', description: 'My tech stack' },
+        { path: 'typescript.png', title: 'TypeScript', description: 'My tech stack' },
         { path: 'javascript.png', title: 'JavaScript', description: 'My tech stack' },
-        { path: 'react.png', title: 'React.js', description: 'My tech stack' },
+        { path: 'react-js.png', title: 'React.js', description: 'My tech stack' },
         { path: 'redux.png', title: 'Redux', description: 'My tech stack' },
         { path: 'vue.png', title: 'Vue.js', description: 'My tech stack' },
         { path: 'vuex.png', title: 'Vuex', description: 'My tech stack' },
@@ -40,7 +40,7 @@ export default {
         { path: 'lerna-js.png', title: 'Lerna.js', description: 'My tech stack' },
         { path: 'travis-ci.png', title: 'Travis CI', description: 'My tech stack' },
         { path: 'webpack.png', title: 'Webpack', description: 'My tech stack' },
-        { path: 'sass.png', title: 'Sass', description: 'My tech stack' },
+        { path: 'sass-style.png', title: 'Sass', description: 'My tech stack' },
         { path: 'styled-components.png', title: 'Styled components', description: 'My tech stack' },
         { path: 'bootstrap.png', title: 'Bootstrap', description: 'My tech stack' }
       ]

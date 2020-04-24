@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-    <fixed-header>
     <div class="navbar">
       <navbar />
     </div>
-    </fixed-header>
     <div class="container-router">
       <router-view/>
     </div>
@@ -12,7 +10,6 @@
 </template>
 
 <script>
-import FixedHeader from 'vue-fixed-header'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -20,7 +17,6 @@ import Navbar from './components/navbar/Navbar'
 
 export default {
   components: {
-    FixedHeader,
     Navbar
   }
 }

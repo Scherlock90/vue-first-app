@@ -85,15 +85,20 @@ export default {
         if (this.posts.filter(it => it.id === item.id)) {
           return {
             ...item,
-            path: this.posts.map(it => it.id === item.id && it.path).filter(path => path !== false)[0],
-            className: this.posts.map(it => it.id === item.id && it.className).filter(className => className !== false)[0],
-            description: this.posts.map(it => it.id === item.id && it.description).filter(description => description !== false)[0],
-            title: this.posts.map(it => it.id === item.id && it.title).filter(title => title !== false)[0]
+            path: this.filterArray(item.id, 'path'),
+            className: this.filterArray(item.id, 'className'),
+            description: this.filterArray(item.id, 'description'),
+            title: this.filterArray(item.id, 'title')
           }
         } else return { ...item, path: 'none' }
       })
 
       this.users = mergeArray
+    },
+    filterArray (itemId, resultItem) {
+      return this.posts
+        .map(it => it.id === itemId && it[resultItem])
+        .filter(item => item !== false)[0]
     }
   }
 }

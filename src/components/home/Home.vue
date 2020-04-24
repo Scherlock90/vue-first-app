@@ -31,7 +31,7 @@ export default {
       techStackArray: [
         { path: 'github.png', title: 'My repository', description: 'My github repository', redirect: 'https://github.com/Scherlock90' },
         { path: 'ts.png', title: 'TypeScript', description: 'My tech stack' },
-        { path: 'js.png', title: 'JavaScript', description: 'My tech stack' },
+        { path: 'javascript.png', title: 'JavaScript', description: 'My tech stack' },
         { path: 'react.png', title: 'React.js', description: 'My tech stack' },
         { path: 'redux.png', title: 'Redux', description: 'My tech stack' },
         { path: 'vue.png', title: 'Vue.js', description: 'My tech stack' },

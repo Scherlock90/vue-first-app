@@ -286,13 +286,6 @@ export default {
         display: flex;
       }
 
-      &::after {
-        content: '⮚';
-        position: absolute;
-        top: 11px;
-        right: 0;
-      }
-
       &.current-menu-item {
         a {
           color: #a6a6a6;
@@ -357,12 +350,12 @@ export default {
     align-items: center;
     position: fixed;
     width: 20%;
-    top: 2%;
-    left: 75%;
+    top: 3%;
+    left: 72%;
     border-radius: 100%;
     z-index: 999;
     padding: 15px 30px;
-    background: transparent;
+    background: #fafafa;
     box-shadow: 0 12px 24px rgba(0,0,0,.09);
 
     &__close-menu {
@@ -379,13 +372,6 @@ export default {
 
       a {
         display: flex;
-      }
-
-      &::after {
-        content: '⮚';
-        position: absolute;
-        top: 11px;
-        right: 0;
       }
 
       &.current-menu-item {

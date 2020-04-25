@@ -123,6 +123,32 @@ export default {
     }
   }
 
+  @include xl {
+     #first {
+        order: 0;
+        position: relative;
+        left: 10rem;
+    }
+
+    #second {
+        order: 1;
+        position: relative;
+        left: 30rem;
+    }
+
+    #third {
+        order: 2;
+        position: relative;
+        left: 10rem;
+    }
+
+    #fourth {
+        order: 3;
+        position: relative;
+        left: 30rem;
+    }
+  }
+
   @include sm-max {
     padding: 4% 2%;
     display: grid;

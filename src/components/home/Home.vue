@@ -60,7 +60,7 @@ export default {
 
 #home-container {
   height: 100%;
-  padding: 0 0 0 5%;
+  padding: 0 0 0 6%;
   background-color: $main-color;
 
   @include sm-max {

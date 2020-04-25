@@ -180,7 +180,7 @@ export default {
         position: fixed;
         top: 0;
         left: 0;
-        width: 80px;
+        width: 5.5rem;
         height: 100vh;
         padding: 0 15px;
         box-shadow: 6px 0 12px rgba(0,0,0,.05);
@@ -218,7 +218,7 @@ export default {
 
         &__show {
             transition: all linear 0.5s;
-            transform: translateX(70px);
+            transform: translateX(40px);
             position: fixed;
             width: 254px;
             height: 100vh;

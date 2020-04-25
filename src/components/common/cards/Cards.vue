@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 col-md-6 col-lg-3">
+  <div :id="id" class="col-12 col-md-6 col-lg-3">
     <div class="portfolio-content">
       <figure>
         <img class="image-home" :src="pathToImage" :alt="nameImage" />
@@ -19,6 +19,7 @@
 <script>
 export default {
   props: {
+    id: { type: String, required: false },
     pathToImage: { type: String, required: true },
     nameImage: { type: String, required: true },
     title: { type: String, required: true },

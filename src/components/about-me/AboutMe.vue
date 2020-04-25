@@ -1,121 +1,131 @@
 <template>
-    <div id="about-container">
-        <h2 class="title"><span class="title__name">Sebastian Napora</span></h2>
-        <div class="two-section">
-            <section class="image-container">
-                <img class="my-face" src="../../assets/images/sen.jpg">
-            </section>
-            <section class="section-text">
-                <p class="text">I like very much Brazylijan Jiu-jitsu training, and play on volleybal.</p>
-                <p class="text">I lern and programming since 3 years. I started with Java for 6 months, next I try C# from 3 months, and finally I tried React.js for 1,5 years.
-                    At now I lerned how to used Vue.js in application, and dive deeper in React with Typescript because I think Typescript prevents many mistakes.
-                </p>
-                <p class="text">At now I think React is the best for me! But when I go to work in Intive Gmbh I got the project where I was a part of application written in Vue.js.</p>
-                <p class="text">That's why I created this application because I wanted to know how Vue works.</p>
-                <p class="text">If you have some purpose how to do better my code, I'm waiting for you resposne.</p>
-            </section>
-        </div>
-        <section class="section-repository">
-            <a class="github" href="https://github.com/Scherlock90">My Github repository</a>
-        </section>
-    </div>
+  <div id="about-container">
+    <cards
+        v-for="stack in aboutMeArray"
+        :key="stack.pathToImage"
+        :id="stack.id"
+        :pathToImage="require(`../../assets/images/about-me/` + stack.pathToImage)"
+        :nameImage="stack.title"
+        :description="stack.description"
+        :title="stack.title"
+        :redirect="stack.redirect"
+    />
+  </div>
 </template>
 
 <script>
+import Cards from '../common/cards/Cards'
+
+export default {
+  components: {
+    'cards': Cards
+  },
+  data () {
+    return {
+      aboutMeArray: [
+        { id: 'first', pathToImage: 'sen.jpg', title: 'Sebastian Napora', description: 'It s me!' },
+        {
+          id: 'second',
+          pathToImage: 'programming.jpg',
+          title: 'My Programming',
+          description:
+            'I lern and programming since 3 years. I started with Java for 6 months, next I try C# from 3 months, and finally I tried React.js for 1,5 years.' +
+            'At now I lerned how to used Vue.js in application, and dive deeper in React with Typescript because I think Typescript prevents many mistakes.'
+        },
+        {
+          id: 'third',
+          pathToImage: 'bjj.jpg',
+          title: 'Hobby',
+          description: 'I train for 5 years Brazilian Jiu-Jitsu, and sometimes I will try to play with friend into Voleyball or on the Xbox.'
+        },
+        {
+          id: 'fourth',
+          pathToImage: 'github.png',
+          title: 'My Github Repository',
+          description: 'Please click if you want see',
+          redirect: 'https://github.com/Scherlock90'
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="scss">
-@import '../../assets/styles/app';
+@import "../../assets/styles/app";
 
 #about-container {
-    padding: 2%;
+  min-height: 100vh;
+  position: absolute;
 
-    .two-section {
-        display: flex;
-        padding: 2% 0;
+  #center {
+      position: absolute;
+      font-size: 3rem;
+      right: 42rem;
+      top: 27rem;
+      color: black;
+      z-index: 1000000000000000000000;
+  }
 
-        @include sm-max {
-            display: grid;
-            padding: 0;
-        }
+  @include sm-min {
+
+    padding: 4% 2%;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    .col-md-6 {
+        max-width: 100%;
     }
+  }
 
-    @include sm-min {
-        height: 100%;
-    }
+  @include lg {
+    padding: 2% 0 2% 10%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 
-    @include sm-max {
-        display: grid;
-    }
-
-    .section-text {
-        height: 60%;
-
-        @include sm-max {
-            height: 100%;
-            padding: 5% 2%;
-            width: 100%;
-        }
-
-        .text {
-            text-align: left;
-            text-indent: 5%;
-            font-size: 120%;
-
-            @include sm-max {
-                text-indent: $text-indent;
-                font-size: $mobile-font-size;
+    .portfolio-content {
+        figure {
+            img {
+                border-radius: 100%;
             }
         }
     }
 
-    .title{
-        color: $color-background;
-
-        @include sm-max {
-            background-color: $background-color;
-        }
-
-        &__name{
-            background-color: $background-color;
-        }
+     #first {
+        order: 0;
+        position: relative;
+        left: 5rem;
     }
 
-    .section-repository {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-
-        @include sm-max {
-            justify-content: center;
-        }
-
-        .github{
-            width: 10%;
-            background-color: $background-color;
-            color: $color-background;
-            font-size: $mobile-font-size;
-
-            @include sm-max {
-                width: 100%;
-            }
-        }
+    #second {
+        order: 1;
+        position: relative;
+        left: 25rem;
     }
 
-    .image-container {
-        display: flex;
-        justify-content: center;
-        width: 40%;
-
-        @include sm-max {
-            width: 100%;
-            padding: 10% 0;
-        }
-
-        .my-face{
-            height: 90%;
-            width: 90%;
-        }
+    #third {
+        order: 2;
+        position: relative;
+        left: 5rem;
     }
+
+    #fourth {
+        order: 3;
+        position: relative;
+        left: 25rem;
+    }
+
+    .col-md-6 {
+        max-width: 50% !important;
+    }
+  }
+
+  @include sm-max {
+    padding: 4% 2%;
+    display: grid;
+  }
 }
 </style>

@@ -3,37 +3,30 @@
     <div :class="className">
       <figure>
         <a href="#">
-          <img :src="pathToImage" alt="title">
+          <img :src="pathToImage" alt="title" />
         </a>
       </figure>
       <div class="entry-content flex flex-column justify-content-between align-items-start">
         <header>
           <h3>
-            <a href="#">
-              {{ title }}
-            </a>
+            <a href="#">{{ title }}</a>
           </h3>
-          <div class="posted-by">
-            {{ nameAuthor }}
-          </div>
+          <div class="posted-by">{{ nameAuthor }}</div>
         </header>
         <footer class="flex flex-wrap align-items-center">
-          <div class="posted-on">
-            {{ created }}
-          </div>
+          <div class="posted-on">{{ created }}</div>
           <ul class="flex flex-wrap align-items-center">
-            <li><a href="#">
-              {{ description }}
-            </a></li>
+            <li>
+              <a href="#">{{ description }}</a>
+            </li>
           </ul>
         </footer>
-      </div><!-- .entry-content -->
-    </div><!-- .blog-content -->
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-
 export default {
   props: {
     pathToImage: { type: String, required: false },
@@ -47,7 +40,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .blog-page .blog-content figure img {
   background-color: #fff;
 }

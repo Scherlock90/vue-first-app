@@ -58,15 +58,6 @@ export default {
   min-height: 100vh;
   position: absolute;
 
-  #center {
-      position: absolute;
-      font-size: 3rem;
-      right: 42rem;
-      top: 27rem;
-      color: black;
-      z-index: 1000000000000000000000;
-  }
-
   @include sm-min {
 
     padding: 4% 2%;
@@ -81,15 +72,18 @@ export default {
   }
 
   @include lg {
-    padding: 2% 0 2% 10%;
+    padding: 2% 0 2% 0;
     display: grid;
     justify-content: center;
     align-items: center;
 
     .portfolio-content {
+        z-index: 1000;
+
         figure {
             img {
                 border-radius: 100%;
+                border: #9e9e9e 2px solid;
             }
         }
     }
@@ -98,18 +92,60 @@ export default {
         order: 0;
         position: relative;
         left: 5rem;
+
+        .line {
+            width: 50%;
+            height: 3px;
+            margin: auto;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            transform: rotate(60deg);
+            background-color: #9e9e9e;
+            z-index: 222;
+            position: relative;
+            top: 0;
+            left: 10rem;
+        }
     }
 
     #second {
         order: 1;
         position: relative;
         left: 25rem;
+
+        .line {
+            width: 50%;
+            height: 3px;
+            margin: auto;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            transform: rotate(-60deg);
+            background-color: #9e9e9e;
+            z-index: 222;
+            position: relative;
+            top: 0;
+            right: 10rem;
+        }
     }
 
     #third {
         order: 2;
         position: relative;
         left: 5rem;
+
+        .line {
+            width: 50%;
+            height: 3px;
+            margin: auto;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            transform: rotate(60deg);
+            background-color: #9e9e9e;
+            z-index: 222;
+            position: relative;
+            top: 0;
+            left: 10rem;
+        }
     }
 
     #fourth {
@@ -124,6 +160,7 @@ export default {
   }
 
   @include xl {
+
      #first {
         order: 0;
         position: relative;

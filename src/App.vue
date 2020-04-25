@@ -43,6 +43,8 @@ body {
 .container-router{
   min-height: 100%;
   background: #ffffff;
+  display: flex;
+  justify-content: center;
 
   @include sm-max {
     min-height: 100vh;

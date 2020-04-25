@@ -176,7 +176,7 @@ export default {
 
 @media screen and (min-width: 992px) {
     .site-header {
-        z-index: 999;
+        z-index: 2001;
         position: fixed;
         top: 0;
         left: 0;
@@ -218,11 +218,11 @@ export default {
 
         &__show {
             transition: all linear 0.5s;
-            transform: translateX(40px);
+            transform: translateX(70px);
             position: fixed;
             width: 254px;
             height: 100vh;
-            z-index: 300;
+            z-index: 2000;
             background-color: #fff;
         }
     }

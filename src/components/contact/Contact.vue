@@ -1,6 +1,7 @@
 <template>
+<div id="contact-container">
   <div class="contact">
-    <div class="container-form">
+    <div class="container-form first-puzzle">
       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
         <b-form-group
           id="input-group-1"
@@ -44,13 +45,14 @@
         <b-button type="submit" variant="primary">Submit</b-button>
         <b-button type="reset" variant="danger">Reset</b-button>
       </b-form>
+      <div class="piece-right"></div>
     </div>
-    <div class="geolocation">
+    <div class="geolocation second-puzzle">
         <GmapMap
+          class="geo-map"
           :center="{lat:52.7632218, lng:23.5830237}"
           :zoom="14"
           map-type-id="terrain"
-          style="width: 500px; height: 300px"
         >
           <GmapMarker
             :key="index"
@@ -63,8 +65,10 @@
         </GmapMap>
       <b-button type="button" variant="primary" v-on:click="geolocation">Take your's location</b-button>
       <a id="map-link"></a>
+      <div class="piece-left"></div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -162,50 +166,143 @@ export default {
 <style lang="scss" scoped>
 @import '../../assets/styles/app';
 
-.contact {
-  height: 90%;
-  padding-top: 10%;
+#contact-container{
+  min-height: 100vh;
+  width: 100%;
   display: flex;
 
-  @include sm-max {
-    display: grid;
-  }
-
-  .container-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .first-puzzle {
+    position: relative;
+    background-color: lightgray;
     width: 50%;
 
     @include sm-max {
-      width: 100%;
-    }
-  }
-
-  .geolocation {
-    width: 50%;
-    padding: 2%;
-    display: grid;
-    justify-content: left;
-    align-items: center;
-
-    @include sm-max {
-      width: 100%;
-      justify-content: center;
+      position: unset;
     }
 
-    .vue-map-container{
+    .piece-right {
+      position: absolute;
+      height: 10rem;
+      width: 10rem;
+      right: -8rem;
+      bottom: 9rem;
+      border-radius: 5rem;
+      z-index: 100;
+      background-color: lightgray;
+
       @include sm-max {
-        width: 100% !important;
-        min-width: 310px;
+        display: none;
       }
     }
   }
-}
 
-.router-link-custom {
-  &:hover {
-    color: #ffffff;
+  .second-puzzle {
+    position: relative;
+    width: 50%;
+    background-color: #fff;
+
+    @include sm-max {
+      position: unset;
+    }
+
+    .piece-left {
+      position: absolute;
+      height: 10rem;
+      width: 10rem;
+      left: -8rem;
+      top: 9rem;
+      border-radius: 5rem;
+      z-index: 100;
+      background-color: #fff;
+
+      @include sm-max {
+        display: none;
+      }
+    }
+  }
+
+  .contact {
+    height: 100%;
+    width: 100%;
+    display: flex;
+
+    @include sm-max {
+      display: grid;
+      height: 100%;
+    }
+
+    .container-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+
+      @include sm-min {
+        form {
+          position: absolute;
+          bottom: 5rem;
+        }
+      }
+
+      @include sm-max {
+        padding: 25% 0 25% 0;
+        width: 100%;
+      }
+    }
+
+    .geolocation {
+      z-index: 100;
+      height: 50%;
+      width: 50%;
+      padding: 2%;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: 5rem;
+
+      .geo-map{
+        height: 310px;
+        width: 320px;
+
+        @include sm-max {
+          width: 310px;
+          height: 320px;
+        }
+
+        @include md {
+          width: 100%;
+          min-width: 350px;
+          min-height: 350px;
+          height: 100%;
+        }
+      }
+
+      @include sm-max {
+        height: 100%;
+        padding: 25% 0 25% 0;
+        top: 0;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .vue-map-container{
+        z-index: 101;
+
+        @include sm-max {
+          width: 100% !important;
+          min-width: 310px;
+        }
+      }
+    }
+  }
+
+  .router-link-custom {
+    &:hover {
+      color: #ffffff;
+    }
   }
 }
+
 </style>

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Cards from './cards/Cards'
+import Cards from '../common/cards/Cards'
 
 export default {
   components: {

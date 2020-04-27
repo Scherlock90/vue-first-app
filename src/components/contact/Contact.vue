@@ -76,11 +76,9 @@ import Vue from 'vue'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import {
   BButton,
-  BCard,
   BForm,
   BFormCheckboxGroup,
   BFormCheckbox,
-  BFormSelect,
   BFormInput,
   BFormGroup
 } from 'bootstrap-vue'
@@ -94,11 +92,9 @@ Vue.use(VueGoogleMaps, {
 export default {
   components: {
     BButton,
-    BCard,
     BForm,
     BFormCheckboxGroup,
     BFormCheckbox,
-    BFormSelect,
     BFormInput,
     BFormGroup
   },

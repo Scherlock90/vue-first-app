@@ -38,13 +38,10 @@
 </template>
 
 <script>
-import { BNav, BNavItem } from 'bootstrap-vue'
 import RoutesNavbar from './routes-navbar/RoutesNavbar'
 
 export default {
   components: {
-    'b-nav-item': BNavItem,
-    'b-nav': BNav,
     'routes-navbar': RoutesNavbar
   },
 

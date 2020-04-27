@@ -1,14 +1,14 @@
 <template>
   <div id="about-container">
     <cards
-        v-for="stack in aboutMeArray"
-        :key="stack.pathToImage"
-        :id="stack.id"
-        :pathToImage="require(`../../assets/images/about-me/` + stack.pathToImage)"
-        :nameImage="stack.title"
-        :description="stack.description"
-        :title="stack.title"
-        :redirect="stack.redirect"
+      v-for="stack in aboutMeArray"
+      :key="stack.pathToImage"
+      :id="stack.id"
+      :pathToImage="require(`../../assets/images/about-me/` + stack.pathToImage)"
+      :nameImage="stack.title"
+      :description="stack.description"
+      :title="stack.title"
+      :redirect="stack.redirect"
     />
   </div>
 </template>
@@ -18,7 +18,7 @@ import Cards from '../common/cards/Cards'
 
 export default {
   components: {
-    'cards': Cards
+    cards: Cards
   },
   data () {
     return {
@@ -36,7 +36,8 @@ export default {
           id: 'third',
           pathToImage: 'bjj.jpg',
           title: 'Hobby',
-          description: 'I train for 5 years Brazilian Jiu-Jitsu, and sometimes I will try to play with friend into Voleyball or on the Xbox.'
+          description:
+            'I train for 5 years Brazilian Jiu-Jitsu, and sometimes I will try to play with friend into Voleyball or on the Xbox.'
         },
         {
           id: 'fourth',
@@ -52,14 +53,13 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/styles/app";
+@import '../../assets/styles/app';
 
 #about-container {
   min-height: 100vh;
   position: absolute;
 
   @include sm-min {
-
     padding: 4% 2%;
     justify-content: center;
     align-items: center;
@@ -67,7 +67,7 @@ export default {
     margin-right: auto;
 
     .col-md-6 {
-        max-width: 100%;
+      max-width: 100%;
     }
   }
 
@@ -78,111 +78,110 @@ export default {
     align-items: center;
 
     .portfolio-content {
-        z-index: 1000;
+      z-index: 1000;
 
-        figure {
-            img {
-                border-radius: 100%;
-                border: #9e9e9e 2px solid;
-            }
+      figure {
+        img {
+          border-radius: 100%;
+          border: #9e9e9e 2px solid;
         }
+      }
     }
 
-     #first {
-        order: 0;
-        position: relative;
-        left: 5rem;
+    #first {
+      order: 0;
+      position: relative;
+      left: 5rem;
 
-        .line {
-            width: 50%;
-            height: 3px;
-            margin: auto;
-            margin-top: 5%;
-            margin-bottom: 5%;
-            transform: rotate(60deg);
-            background-color: #9e9e9e;
-            z-index: 222;
-            position: relative;
-            top: 0;
-            left: 10rem;
-        }
+      .line {
+        width: 50%;
+        height: 3px;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        transform: rotate(60deg);
+        background-color: #9e9e9e;
+        z-index: 222;
+        position: relative;
+        top: 0;
+        left: 10rem;
+      }
     }
 
     #second {
-        order: 1;
-        position: relative;
-        left: 25rem;
+      order: 1;
+      position: relative;
+      left: 25rem;
 
-        .line {
-            width: 50%;
-            height: 3px;
-            margin: auto;
-            margin-top: 5%;
-            margin-bottom: 5%;
-            transform: rotate(-60deg);
-            background-color: #9e9e9e;
-            z-index: 222;
-            position: relative;
-            top: 0;
-            right: 10rem;
-        }
+      .line {
+        width: 50%;
+        height: 3px;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        transform: rotate(-60deg);
+        background-color: #9e9e9e;
+        z-index: 222;
+        position: relative;
+        top: 0;
+        right: 10rem;
+      }
     }
 
     #third {
-        order: 2;
-        position: relative;
-        left: 5rem;
+      order: 2;
+      position: relative;
+      left: 5rem;
 
-        .line {
-            width: 50%;
-            height: 3px;
-            margin: auto;
-            margin-top: 5%;
-            margin-bottom: 5%;
-            transform: rotate(60deg);
-            background-color: #9e9e9e;
-            z-index: 222;
-            position: relative;
-            top: 0;
-            left: 10rem;
-        }
+      .line {
+        width: 50%;
+        height: 3px;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        transform: rotate(60deg);
+        background-color: #9e9e9e;
+        z-index: 222;
+        position: relative;
+        top: 0;
+        left: 10rem;
+      }
     }
 
     #fourth {
-        order: 3;
-        position: relative;
-        left: 25rem;
+      order: 3;
+      position: relative;
+      left: 25rem;
     }
 
     .col-md-6 {
-        max-width: 50% !important;
+      max-width: 50% !important;
     }
   }
 
   @include xl {
-
-     #first {
-        order: 0;
-        position: relative;
-        left: 10rem;
+    #first {
+      order: 0;
+      position: relative;
+      left: 10rem;
     }
 
     #second {
-        order: 1;
-        position: relative;
-        left: 30rem;
+      order: 1;
+      position: relative;
+      left: 30rem;
     }
 
     #third {
-        order: 2;
-        position: relative;
-        left: 10rem;
+      order: 2;
+      position: relative;
+      left: 10rem;
     }
 
     #fourth {
-        order: 3;
-        position: relative;
-        left: 30rem;
+      order: 3;
+      position: relative;
+      left: 30rem;
     }
   }
 

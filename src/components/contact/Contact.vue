@@ -187,7 +187,12 @@ export default {
       background-color: lightgray;
 
       @include sm-max {
-        display: none;
+        bottom: 8rem;
+        right: 0;
+        left: 10rem;
+        width: 6rem;
+        height: 6rem;
+        z-index: 110;
       }
     }
   }
@@ -210,10 +215,6 @@ export default {
       border-radius: 5rem;
       z-index: 100;
       background-color: #fff;
-
-      @include sm-max {
-        display: none;
-      }
     }
   }
 
@@ -234,12 +235,15 @@ export default {
       width: 50%;
       height: 100%;
 
-      @include sm-min {
         form {
-          position: absolute;
-          bottom: 5rem;
+          @include sm-min {
+            position: absolute;
+            bottom: 5rem;
+          }
+          @include sm-max {
+            z-index: 110;
+          }
         }
-      }
 
       @include sm-max {
         padding: 25% 0 25% 0;

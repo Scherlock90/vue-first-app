@@ -1,5 +1,5 @@
 <template>
-  <div id="about-container">
+  <div id="about-container" v-if="aboutMeArray.length">
     <cards
       v-for="stack in aboutMeArray"
       :key="stack.pathToImage"
@@ -11,6 +11,7 @@
       :redirect="stack.redirect"
     />
   </div>
+  <div v-else>Loading data...</div>
 </template>
 
 <script>

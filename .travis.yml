@@ -12,6 +12,7 @@ before_script:
   - npm ci
 
 script:
+  - npm run test
   - CI=false npm run build
 
 deploy:

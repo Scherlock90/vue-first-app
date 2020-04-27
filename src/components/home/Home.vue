@@ -36,6 +36,7 @@ export default {
         { path: 'redux.png', title: 'Redux', description: 'My tech stack' },
         { path: 'vue.png', title: 'Vue.js', description: 'My tech stack' },
         { path: 'vuex.png', title: 'Vuex', description: 'My tech stack' },
+        { path: 'jest.jpg', title: 'Jest', description: 'My tech stack' },
         { path: 'kentico.png', title: 'Kentico Cloud CMS', description: 'My tech stack' },
         { path: 'lerna-js.png', title: 'Lerna.js', description: 'My tech stack' },
         { path: 'travis-ci.png', title: 'Travis CI', description: 'My tech stack' },

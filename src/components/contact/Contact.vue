@@ -1,53 +1,39 @@
 <template>
-<div id="contact-container">
-  <div class="contact">
-    <div class="container-form first-puzzle">
-      <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-        <b-form-group
-          id="input-group-1"
-          label="Email address:"
-          label-for="input-1"
-        >
-          <b-form-input
-            id="input-1"
-            v-model="form.email"
-            type="email"
-            required
-            placeholder="Enter email"
-          ></b-form-input>
-        </b-form-group>
+  <div id="contact-container">
+    <div class="contact">
+      <div class="container-form first-puzzle">
+        <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+          <b-form-group id="input-group-1" label="Email address:" label-for="input-1">
+            <b-form-input
+              id="input-1"
+              v-model="form.email"
+              type="email"
+              required
+              placeholder="Enter email"
+            ></b-form-input>
+          </b-form-group>
 
-        <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
-          <b-form-input
-            id="input-2"
-            v-model="form.name"
-            required
-            placeholder="Enter name"
-          ></b-form-input>
-        </b-form-group>
+          <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
+            <b-form-input id="input-2" v-model="form.name" required placeholder="Enter name"></b-form-input>
+          </b-form-group>
 
-        <b-form-group id="input-group-2" label="Your body:" label-for="input-2">
-          <b-form-input
-            id="input-2"
-            v-model="form.body"
-            required
-            placeholder="Enter body"
-          ></b-form-input>
-        </b-form-group>
+          <b-form-group id="input-group-2" label="Your body:" label-for="input-2">
+            <b-form-input id="input-2" v-model="form.body" required placeholder="Enter body"></b-form-input>
+          </b-form-group>
 
-        <b-form-group id="input-group-4">
-          <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
-            <b-form-checkbox value="me">Check me out</b-form-checkbox>
-            <b-form-checkbox value="that">Check that out</b-form-checkbox>
-          </b-form-checkbox-group>
-        </b-form-group>
+          <b-form-group id="input-group-4">
+            <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
+              <b-form-checkbox value="me">Check me out</b-form-checkbox>
+              <b-form-checkbox value="that">Check that out</b-form-checkbox>
+            </b-form-checkbox-group>
+          </b-form-group>
 
-        <b-button type="submit" variant="primary">Submit</b-button>
-        <b-button type="reset" variant="danger">Reset</b-button>
-      </b-form>
-      <div class="piece-right"></div>
-    </div>
-    <div class="geolocation second-puzzle">
+          <b-button type="submit" variant="primary">Submit</b-button>
+          <b-button type="reset" variant="danger">Reset</b-button>
+        </b-form>
+        <div class="piece-right"></div>
+      </div>
+      <div class="geolocation second-puzzle">
         <GmapMap
           class="geo-map"
           :center="{lat:52.7632218, lng:23.5830237}"
@@ -63,25 +49,18 @@
             @click="center=m.position"
           />
         </GmapMap>
-      <b-button type="button" variant="primary" v-on:click="geolocation">Take your's location</b-button>
-      <a id="map-link"></a>
-      <div class="piece-left"></div>
+        <b-button type="button" variant="primary" v-on:click="geolocation">Take your's location</b-button>
+        <a id="map-link"></a>
+        <div class="piece-left"></div>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
 import Vue from 'vue'
 import * as VueGoogleMaps from 'vue2-google-maps'
-import {
-  BButton,
-  BForm,
-  BFormCheckboxGroup,
-  BFormCheckbox,
-  BFormInput,
-  BFormGroup
-} from 'bootstrap-vue'
+import { BButton, BForm, BFormCheckboxGroup, BFormCheckbox, BFormInput, BFormGroup } from 'bootstrap-vue'
 
 Vue.use(VueGoogleMaps, {
   load: {
@@ -123,7 +102,7 @@ export default {
       if (navigator.geolocation) {
         const mapLink = document.querySelector('#map-link')
 
-        const success = (position) => {
+        const success = position => {
           const lat = position.coords.latitude
           const lang = position.coords.longitude
 
@@ -139,7 +118,11 @@ export default {
           console.log('Geolocation is not supported by your browser')
         } else {
           console.log('Locating…')
-          navigator.geolocation.getCurrentPosition(success, error, { maximumAge: 60000, timeout: 5000, enableHighAccuracy: true })
+          navigator.geolocation.getCurrentPosition(success, error, {
+            maximumAge: 60000,
+            timeout: 5000,
+            enableHighAccuracy: true
+          })
         }
       }
     },
@@ -162,7 +145,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../assets/styles/app';
 
-#contact-container{
+#contact-container {
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -185,15 +168,6 @@ export default {
       border-radius: 5rem;
       z-index: 100;
       background-color: lightgray;
-
-      @include sm-max {
-        bottom: 8rem;
-        right: 0;
-        left: 10rem;
-        width: 6rem;
-        height: 6rem;
-        z-index: 110;
-      }
     }
   }
 
@@ -235,15 +209,15 @@ export default {
       width: 50%;
       height: 100%;
 
-        form {
-          @include sm-min {
-            position: absolute;
-            bottom: 5rem;
-          }
-          @include sm-max {
-            z-index: 110;
-          }
+      form {
+        @include sm-min {
+          position: absolute;
+          bottom: 5rem;
         }
+        @include sm-max {
+          z-index: 110;
+        }
+      }
 
       @include sm-max {
         padding: 25% 0 25% 0;
@@ -262,7 +236,7 @@ export default {
       position: relative;
       top: 5rem;
 
-      .geo-map{
+      .geo-map {
         height: 310px;
         width: 320px;
 
@@ -287,7 +261,7 @@ export default {
         justify-content: center;
       }
 
-      .vue-map-container{
+      .vue-map-container {
         z-index: 101;
 
         @include sm-max {
@@ -304,5 +278,4 @@ export default {
     }
   }
 }
-
 </style>
